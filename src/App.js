@@ -25,6 +25,7 @@ class App extends Component {
           <Home path="/" />
           <Articles path="/articles" />
           <Topics path="/topics" />
+          <Articles path="/articles/:topicSlug" />
         </Router>
       </div>
     );

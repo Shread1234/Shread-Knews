@@ -6,7 +6,9 @@ function NavBar() {
     <nav>
       <Link to="/">Home</Link>
       <br />
-      <Link to="/articles">Articles</Link>
+      <Link onClick={() => window.location.reload()} to="/articles">
+        Articles
+      </Link>
       <br />
       <Link to="/topics">Topics</Link>
       <br />

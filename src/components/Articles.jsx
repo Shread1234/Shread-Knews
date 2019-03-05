@@ -6,12 +6,12 @@ import ArticleViewer from '../Utils/ArticleViewer';
 
 export default class Articles extends React.Component {
   state = {
-    articles: null,
-    articleView: ''
+    articles: null
   };
 
   componentDidMount() {
-    getAllArticles().then(({ data }) =>
+    const { topicSlug } = this.props;
+    getAllArticles(topicSlug).then(({ data }) =>
       this.setState({ articles: data.articles })
     );
   }

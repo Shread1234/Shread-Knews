@@ -8,7 +8,7 @@ export default function TopicViewer(props) {
       {topics !== null &&
         topics.map((topic) => (
           <div key={topic.slug}>
-            <Link to={`/articles?topic=${topic.slug}`}>{topic.slug}</Link>
+            <Link to={`/articles/${topic.slug}`}>{topic.slug}</Link>
             <h4>{topic.description}</h4>
             <br />
           </div>
