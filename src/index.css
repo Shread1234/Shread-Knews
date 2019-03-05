@@ -18,3 +18,9 @@ code {
 h1 {
   text-align: center;
 }
+
+#homeUserLogin {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
