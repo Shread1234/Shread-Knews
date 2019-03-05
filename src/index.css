@@ -24,3 +24,7 @@ h1 {
   top: 0;
   right: 0;
 }
+
+.articlePrev {
+  list-style-type: none;
+}
