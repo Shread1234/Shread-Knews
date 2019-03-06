@@ -1,12 +1,18 @@
 import React from 'react';
 import NavBar from './NavBar';
 import UserLogin from './UserLogin';
-import { getAllArticles } from '../Utils/Axios';
+import {
+  getAllArticles,
+  allArticlesOrder,
+  topicArticlesOrder
+} from '../Utils/Axios';
 import ArticleViewer from '../Utils/ArticleViewer';
+import ArticleOrder from '../components/ArticleOrder';
 
 export default class Articles extends React.Component {
   state = {
-    articles: null
+    articles: null,
+    articleOrder: null
   };
 
   componentDidMount() {
@@ -15,6 +21,18 @@ export default class Articles extends React.Component {
       this.setState({ articles: data.articles })
     );
   }
+
+  changeOrder = (event) => {
+    const value = event.target.value;
+    const topic = this.props.topicSlug;
+    topic
+      ? topicArticlesOrder(value, topic).then(({ data }) =>
+          this.setState({ articles: data.articles })
+        )
+      : allArticlesOrder(value).then(({ data }) =>
+          this.setState({ articles: data.articles })
+        );
+  };
 
   render() {
     const { articles } = this.state;
@@ -26,6 +44,8 @@ export default class Articles extends React.Component {
           {topicSlug ? `Articles on ${topicSlug}` : 'All Articles'}
         </h1>
         <UserLogin />
+        <ArticleOrder changeOrder={this.changeOrder} />
+        <br />
         <ArticleViewer articles={articles} />
       </div>
     );

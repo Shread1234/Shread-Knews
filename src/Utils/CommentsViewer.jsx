@@ -6,11 +6,13 @@ export default function CommentsViewer(props) {
 
   return (
     <ul>
+      <h3>Comments</h3>
       {comments !== null &&
         comments.map((comment) => (
-          <div key={comment.id}>
+          <div key={comment.comment_id}>
             <li id="commentsList">
-              <Link to={`/users/${comment.author}`}>{comment.author}</Link>
+              <Link to={`/users/${comment.author}`}>{comment.author}</Link>{' '}
+              &nbsp; Votes: {comment.votes} &nbsp; Posted: {comment.created_at}
             </li>
             <br />
             <li id="commentsList">{comment.body}</li>

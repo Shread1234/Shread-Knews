@@ -20,6 +20,9 @@ export default function SingleArticleViewer(props) {
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Topic:{' '}
             <Link to={`/articles/topic/${article.topic}`}>{article.topic}</Link>
             <p>{article.body}</p>
+            <p>
+              Comments: {article.comment_count} &nbsp; Votes: {article.votes}
+            </p>
             <br />
             <Comments article_id={article.article_id} />
           </div>

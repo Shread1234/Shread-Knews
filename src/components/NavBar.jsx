@@ -11,8 +11,6 @@ function NavBar() {
       </Link>
       <br />
       <Link to="/topics">Topics</Link>
-      <br />
-      <Link to="/users">All Users</Link>
     </nav>
   );
 }

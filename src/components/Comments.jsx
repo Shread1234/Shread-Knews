@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from '@reach/router';
 import { getCommentsByArticle } from '../Utils/Axios';
 import CommentsViewer from '../Utils/CommentsViewer';
 
