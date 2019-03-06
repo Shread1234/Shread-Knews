@@ -18,10 +18,13 @@ export default class Articles extends React.Component {
 
   render() {
     const { articles } = this.state;
+    const { topicSlug } = this.props;
     return (
       <div className="Articles">
         <NavBar id="navBar" />
-        <h1 id="allArticlesTitle">Articles</h1>
+        <h1 id="allArticlesTitle">
+          {topicSlug ? `Articles on ${topicSlug}` : 'All Articles'}
+        </h1>
         <UserLogin />
         <ArticleViewer articles={articles} />
       </div>

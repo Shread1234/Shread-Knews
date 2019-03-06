@@ -28,3 +28,7 @@ h1 {
 .articlePrev {
   list-style-type: none;
 }
+
+#commentsList {
+  list-style-type: none;
+}

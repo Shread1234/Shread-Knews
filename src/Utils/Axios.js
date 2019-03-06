@@ -11,3 +11,11 @@ export function getAllArticles(topicSlug) {
 export function getAllTopics() {
   return axios.get(`${baseURL}topics`);
 }
+
+export function getArticleById(article_id) {
+  return axios.get(`${baseURL}articles/${article_id}`);
+}
+
+export function getCommentsByArticle(article_id) {
+  return axios.get(`${baseURL}articles/${article_id}/comments`);
+}

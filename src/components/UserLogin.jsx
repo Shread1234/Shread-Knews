@@ -11,6 +11,10 @@ function UserLogin(props) {
       <br />
       <button type="reset" form="userLogin" onClick={props.userCheck}>
         Login
+      </button>{' '}
+      &nbsp;
+      <button type="reset" from="userLogin">
+        Sign Up
       </button>
     </div>
   );
