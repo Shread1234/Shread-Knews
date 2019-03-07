@@ -16,6 +16,9 @@ export default class Home extends React.Component {
     return (
       <div className="Home">
         <NavBar id="navBar" />
+        <br />
+        <br />
+        <br />
         <h1 id="homeTitle">Shread Knews</h1>
         <UserLogin />
       </div>

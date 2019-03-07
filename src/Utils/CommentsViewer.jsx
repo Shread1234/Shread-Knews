@@ -12,7 +12,8 @@ export default function CommentsViewer(props) {
           <div key={comment.comment_id}>
             <li id="commentsList">
               <Link to={`/users/${comment.author}`}>{comment.author}</Link>{' '}
-              &nbsp; Votes: {comment.votes} &nbsp; Posted: {comment.created_at}
+              &nbsp; Votes: {comment.votes} &nbsp; Posted:{' '}
+              {new Date(comment.created_at).toUTCString()}
             </li>
             <br />
             <li id="commentsList">{comment.body}</li>

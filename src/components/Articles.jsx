@@ -40,6 +40,9 @@ export default class Articles extends React.Component {
     return (
       <div className="Articles">
         <NavBar id="navBar" />
+        <br />
+        <br />
+        <br />
         <h1 id="allArticlesTitle">
           {topicSlug ? `Articles on ${topicSlug}` : 'All Articles'}
         </h1>

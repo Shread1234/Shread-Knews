@@ -10,13 +10,16 @@ export default function SingleArticleViewer(props) {
         [article].map((article) => (
           <div key={article.article_id}>
             <br />
+            <br />
+            <br />
             <h1>{article.title}</h1>
             <br />
             By: <Link to={`/users/${article.author}`}>
               {' '}
               {article.author}
             </Link>{' '}
-            &nbsp;&nbsp;&nbsp;&nbsp;Posted: {article.created_at}{' '}
+            &nbsp;&nbsp;&nbsp;&nbsp;Posted:{' '}
+            {new Date(article.created_at).toUTCString()}{' '}
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Topic:{' '}
             <Link to={`/articles/topic/${article.topic}`}>{article.topic}</Link>
             <p>{article.body}</p>

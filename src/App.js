@@ -6,29 +6,35 @@ import Topics from './components/Topics';
 import SingleArticle from './components/SingleArticle';
 
 class App extends Component {
-  state = {
-    currentUser: ''
-  };
-
-  handleUserChange = (event) => {
-    event.preventDefault();
-    const value = event.target.value;
-    this.setState({ currentUser: value });
-  };
-
-  handleClick = (event) => {
-    event.preventDefault();
-  };
-
   render() {
     return (
       <div className="App">
         <Router>
-          <Home path="/" />
-          <Articles path="/articles" />
-          <Topics path="/topics" />
-          <Articles path="/articles/topic/:topicSlug" />
-          <SingleArticle path="/articles/:article_id" />
+          <Home
+            path="/"
+            handleUserChange={this.handleUserChange}
+            handleSubmit={this.handleSubmit}
+          />
+          <Articles
+            path="/articles"
+            handleUserChange={this.handleUserChange}
+            handleSubmit={this.handleSubmit}
+          />
+          <Topics
+            path="/topics"
+            handleUserChange={this.handleUserChange}
+            handleSubmit={this.handleSubmit}
+          />
+          <Articles
+            path="/articles/topic/:topicSlug"
+            handleUserChange={this.handleUserChange}
+            handleSubmit={this.handleSubmit}
+          />
+          <SingleArticle
+            path="/articles/:article_id"
+            handleUserChange={this.handleUserChange}
+            handleSubmit={this.handleSubmit}
+          />
         </Router>
       </div>
     );

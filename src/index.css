@@ -32,3 +32,29 @@ h1 {
 #commentsList {
   list-style-type: none;
 }
+
+#signOutButton {
+  position: absolute;
+  top: 70%;
+}
+
+#loggedInUserLink {
+  position: absolute;
+  top: 25%;
+  right: 45%;
+  margin-top: 3%;
+}
+
+#loggedInAs {
+  position: relative;
+  top: 0%;
+  right: 7%;
+  margin-bottom: 4%;
+  margin-top: 0%;
+}
+
+#signOutButton {
+  position: relative;
+  top: 0%;
+  right: 10%;
+}

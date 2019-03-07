@@ -18,6 +18,9 @@ export default class Topics extends React.Component {
     return (
       <div className="Topics">
         <NavBar id="navBar" />
+        <br />
+        <br />
+        <br />
         <h1 id="allTopicsTitle">Topics</h1>
         <UserLogin />
         <TopicViewer topics={topics} handleClick={this.handleClick} />
