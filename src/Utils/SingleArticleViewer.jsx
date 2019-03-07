@@ -3,7 +3,7 @@ import { Link } from '@reach/router';
 import Comments from '../components/Comments';
 
 export default function SingleArticleViewer(props) {
-  const { article } = props;
+  const { article, user } = props;
   return (
     <ul>
       {article !== null &&
@@ -26,6 +26,12 @@ export default function SingleArticleViewer(props) {
             <p>
               Comments: {article.comment_count} &nbsp; Votes: {article.votes}
             </p>
+            {user && (
+              <div>
+                <button id="articleUpVote">Up Vote</button>
+                <button id="articleDownVote">Down Vote</button>
+              </div>
+            )}
             <br />
             <Comments article_id={article.article_id} />
           </div>

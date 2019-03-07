@@ -41,10 +41,12 @@ class UserLogin extends React.Component {
     this.setState({ loggedInUser: '' }, () =>
       localStorage.setItem('loggedInUser', '')
     );
+    this.props.removeUser();
   };
 
   saveUser = () => {
     localStorage.setItem('loggedInUser', this.state.loggedInUser);
+    this.props.setUser();
   };
 
   render() {
@@ -52,9 +54,9 @@ class UserLogin extends React.Component {
     return (
       <div id="homeUserLogin">
         {userError === true && loggedInUser === '' ? (
-          <p>Invalid Username</p>
+          <p className="initialLogin">Invalid Username</p>
         ) : (
-          loggedInUser === '' && <p>Login Here</p>
+          loggedInUser === '' && <p className="initialLogin">Login Here</p>
         )}
         {loggedInUser !== '' && (
           <div>
@@ -70,18 +72,18 @@ class UserLogin extends React.Component {
             onChange={this.handleUserChange}
             onSubmit={this.handleSubmit}
           >
-            <input defaultValue="" type="text" required />
+            <input defaultValue="" type="text" required id="loginBox" />
           </form>
         )}
         <br />
         {loggedInUser === '' && (
-          <button type="submit" form="userLogin">
+          <button type="submit" form="userLogin" id="loginButton">
             Login
           </button>
         )}{' '}
         &nbsp;
         {loggedInUser === '' ? (
-          <button type="submit" form="userLogin">
+          <button type="submit" form="userLogin" id="signUpButton">
             Sign Up
           </button>
         ) : (

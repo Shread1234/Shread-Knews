@@ -1,6 +1,4 @@
 import React from 'react';
-import NavBar from './NavBar';
-import UserLogin from './UserLogin';
 import {
   getAllArticles,
   allArticlesOrder,
@@ -8,6 +6,7 @@ import {
 } from '../Utils/Axios';
 import ArticleViewer from '../Utils/ArticleViewer';
 import ArticleOrder from '../components/ArticleOrder';
+import { Link } from '@reach/router';
 
 export default class Articles extends React.Component {
   state = {
@@ -36,19 +35,22 @@ export default class Articles extends React.Component {
 
   render() {
     const { articles } = this.state;
-    const { topicSlug } = this.props;
+    const { topicSlug, user } = this.props;
     return (
       <div className="Articles">
-        <NavBar id="navBar" />
         <br />
         <br />
         <br />
         <h1 id="allArticlesTitle">
           {topicSlug ? `Articles on ${topicSlug}` : 'All Articles'}
         </h1>
-        <UserLogin />
         <ArticleOrder changeOrder={this.changeOrder} />
         <br />
+        {user.length > 0 && (
+          <Link to={`/users/${user}/postarticle`}>
+            <button>Post New Article</button>
+          </Link>
+        )}
         <ArticleViewer articles={articles} />
       </div>
     );

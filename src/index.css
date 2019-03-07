@@ -58,3 +58,29 @@ h1 {
   top: 0%;
   right: 10%;
 }
+
+.initialLogin {
+  position: absolute;
+  top: 0%;
+  right: 2%;
+  margin-top: 0%;
+}
+
+#loginBox {
+  position: relative;
+  top: 5%;
+  right: 2%;
+  margin-top: 15%;
+}
+
+#signUpButton {
+  position: relative;
+  top: 0%;
+  right: -30%;
+}
+
+#loginButton {
+  position: relative;
+  top: 0%;
+  right: -30%;
+}

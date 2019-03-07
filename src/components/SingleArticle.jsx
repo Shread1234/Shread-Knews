@@ -1,6 +1,4 @@
 import React from 'react';
-import NavBar from './NavBar';
-import UserLogin from './UserLogin';
 import { getArticleById } from '../Utils/Axios';
 import SingleArticleViewer from '../Utils/SingleArticleViewer';
 
@@ -20,9 +18,7 @@ export default class SingleArticle extends React.Component {
     const { currentArticle } = this.state;
     return (
       <div className="singleArticle">
-        <NavBar id="navBar" />
-        <UserLogin />
-        <SingleArticleViewer article={currentArticle} />
+        <SingleArticleViewer article={currentArticle} user={this.props.user} />
       </div>
     );
   }
