@@ -36,6 +36,7 @@ export default class SingleArticleViewer extends React.Component {
 
     postComment(comment, author, articleId);
     this.setState({ commentAdded: true });
+    setTimeout(() => this.setState({ commentAdded: false }), 2000);
   };
 
   render() {

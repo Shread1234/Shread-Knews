@@ -17,8 +17,11 @@ export default function ArticleViewer(props) {
             </li>
             <br />
             <li className="articlePrev">
-              By: {article.author} &nbsp; Posted:{' '}
-              {new Date(article.created_at).toUTCString()}
+              By:{' '}
+              <Link id="toArticleAuth" to={`/users/${article.author}`}>
+                {article.author}
+              </Link>{' '}
+              &nbsp; Posted: {new Date(article.created_at).toUTCString()}
             </li>
             <br />
             <li className="articlePrev">

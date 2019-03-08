@@ -67,3 +67,12 @@ export function postComment(comment, author, articleId) {
     body: comment
   });
 }
+
+export function postArticle(title, topic, body, author) {
+  return axios.post(`${baseURL}articles`, {
+    title: title,
+    body: body,
+    topic: topic,
+    username: author
+  });
+}
