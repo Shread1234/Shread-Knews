@@ -1,25 +1,17 @@
 import React from 'react';
-import { Link } from '@reach/router';
+import SingleComment from '../components/SingleComment';
 
 export default function CommentsViewer(props) {
-  const { comments } = props;
-
+  const { comments, user } = props;
   return (
-    <ul>
-      <h3>Comments</h3>
-      {comments !== null &&
-        comments.map((comment) => (
-          <div key={comment.comment_id}>
-            <li id="commentsList">
-              <Link to={`/users/${comment.author}`}>{comment.author}</Link>{' '}
-              &nbsp; Votes: {comment.votes} &nbsp; Posted:{' '}
-              {new Date(comment.created_at).toUTCString()}
-            </li>
-            <br />
-            <li id="commentsList">{comment.body}</li>
-            <br />
-          </div>
-        ))}
-    </ul>
+    <div>
+      <ul>
+        <h3>Comments</h3>
+        {comments !== null &&
+          comments.map((comment) => (
+            <SingleComment comment={comment} user={user} />
+          ))}
+      </ul>
+    </div>
   );
 }

@@ -46,3 +46,9 @@ export function userCheck(user) {
 export function articleVote(articleId, vote) {
   return axios.patch(`${baseURL}articles/${articleId}`, { inc_votes: vote });
 }
+
+export function commentVote(commentId, vote) {
+  return axios.patch(`${baseURL}comments/${commentId}`, {
+    inc_votes: vote
+  });
+}

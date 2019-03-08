@@ -68,7 +68,7 @@ export default class SingleArticleViewer extends React.Component {
                 </div>
               )}
               <br />
-              <Comments article_id={article.article_id} />
+              <Comments user={user} article_id={article.article_id} />
             </div>
           ))}
       </ul>

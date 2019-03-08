@@ -18,7 +18,7 @@ export default class Comments extends React.Component {
 
     return (
       <div className="Comments">
-        <CommentsViewer comments={comments} />
+        <CommentsViewer comments={comments} user={this.props.user} />
       </div>
     );
   }
