@@ -56,3 +56,7 @@ export function commentVote(commentId, vote) {
 export function removeArticle(articleId) {
   return axios.delete(`${baseURL}articles/${articleId}`);
 }
+
+export function removeComment(commentId) {
+  return axios.delete(`${baseURL}comments/${commentId}`);
+}

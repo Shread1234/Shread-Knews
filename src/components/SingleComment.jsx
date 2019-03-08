@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from '@reach/router';
-import { commentVote } from '../Utils/Axios';
+import { commentVote, removeComment } from '../Utils/Axios';
 
 export default class SingleComment extends React.Component {
   state = {
-    voteChange: 0
+    voteChange: 0,
+    commentRemoved: false
   };
 
   handleVoteChange = (event) => {
@@ -18,9 +19,17 @@ export default class SingleComment extends React.Component {
     });
   };
 
+  handleDelete = (event) => {
+    const commentId = Number(event.target.parentNode.parentNode.firstChild.id);
+    removeComment(commentId);
+    this.setState({ commentRemoved: true });
+  };
+
   render() {
     const { comment, user } = this.props;
-    const { voteChange } = this.state;
+    const { voteChange, commentRemoved } = this.state;
+
+    if (commentRemoved) return <h2>Comment Deleted!</h2>;
     return (
       <div key={comment.comment_id}>
         <li id={comment.comment_id} className="commentsList">
@@ -49,6 +58,11 @@ export default class SingleComment extends React.Component {
             >
               Down Vote
             </button>
+            {user === comment.author && (
+              <button id="deleteComment" onClick={this.handleDelete}>
+                Delete Comment
+              </button>
+            )}
             <br />
             <br />
           </div>
