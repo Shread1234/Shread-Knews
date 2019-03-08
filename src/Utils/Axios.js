@@ -52,3 +52,7 @@ export function commentVote(commentId, vote) {
     inc_votes: vote
   });
 }
+
+export function removeArticle(articleId) {
+  return axios.delete(`${baseURL}articles/${articleId}`);
+}
