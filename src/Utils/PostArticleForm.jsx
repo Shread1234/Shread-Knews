@@ -49,7 +49,7 @@ export default function PostArticleForm({
           onChange={formChange}
           rows="20"
           cols="30"
-          id="articlebody"
+          id="articleBody"
           required
         />
       </form>

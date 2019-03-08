@@ -27,11 +27,20 @@ export default class PostArticle extends React.Component {
 
   addArticle = (event) => {
     event.preventDefault();
+    const newTopicSlug = this.state.newTopicSlug;
+    const newTopicDescription = this.state.newTopicDescription;
     const title = this.state.articleTitle;
     const body = this.state.articleBody;
     const topic = this.state.selectedTopic;
     const author = this.props.user;
-    postArticle(title, topic, body, author);
+
+    if (topic === 'New Topic') {
+      addTopic(newTopicSlug, newTopicDescription).then(
+        postArticle(title, newTopicSlug, body, author)
+      );
+    } else {
+      postArticle(title, topic, body, author);
+    }
   };
 
   render() {

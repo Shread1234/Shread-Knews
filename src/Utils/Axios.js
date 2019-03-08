@@ -71,15 +71,15 @@ export function postComment(comment, author, articleId) {
 export function postArticle(title, topic, body, author) {
   return axios.post(`${baseURL}articles`, {
     title: title,
-    body: body,
     topic: topic,
+    body: body,
     username: author
   });
 }
 
-export function addTopic(topicSlug, description) {
+export function addTopic(newTopicSlug, newTopicDescription) {
   return axios.post(`${baseURL}topics`, {
-    slug: topicSlug,
-    description: description
+    slug: newTopicSlug,
+    description: newTopicDescription
   });
 }
