@@ -76,3 +76,10 @@ export function postArticle(title, topic, body, author) {
     username: author
   });
 }
+
+export function addTopic(topicSlug, description) {
+  return axios.post(`${baseURL}topics`, {
+    slug: topicSlug,
+    description: description
+  });
+}

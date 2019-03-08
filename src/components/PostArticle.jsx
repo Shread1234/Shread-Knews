@@ -1,11 +1,16 @@
 import React from 'react';
-import { getAllTopics, postArticle } from '../Utils/Axios';
+import { getAllTopics, postArticle, addTopic } from '../Utils/Axios';
 import PostArticleForm from '../Utils/PostArticleForm';
 
 export default class PostArticle extends React.Component {
   state = {
     topics: null,
-    selectedTopic: ''
+    selectedTopic: '',
+    articleTitle: '',
+    articleBody: '',
+    author: this.props.user,
+    newTopicSlug: '',
+    newTopicDescription: ''
   };
 
   componentDidMount() {
@@ -16,15 +21,17 @@ export default class PostArticle extends React.Component {
     this.setState({ selectedTopic: event.target.value });
   };
 
+  formChange = (event) => {
+    this.setState({ [event.target.id]: event.target.value });
+  };
+
   addArticle = (event) => {
     event.preventDefault();
-    const title = event.target.parentNode.firstChild[0].value;
-    const topic = event.target.parentNode.firstChild[1].value;
-    const body = event.target.parentNode.firstChild[2].value;
+    const title = this.state.articleTitle;
+    const body = this.state.articleBody;
+    const topic = this.state.selectedTopic;
     const author = this.props.user;
-    postArticle(title, topic, body, author).then(({ data }) =>
-      console.log(data)
-    );
+    postArticle(title, topic, body, author);
   };
 
   render() {
@@ -35,6 +42,7 @@ export default class PostArticle extends React.Component {
         selectTopic={this.selectTopic}
         selectedTopic={selectedTopic}
         addArticle={this.addArticle}
+        formChange={this.formChange}
       />
     );
   }
