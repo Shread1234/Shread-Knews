@@ -1,6 +1,7 @@
 import React from 'react';
 import { getAllTopics, postArticle, addTopic } from '../Utils/Axios';
 import PostArticleForm from '../Utils/PostArticleForm';
+import { navigate } from '@reach/router';
 
 export default class PostArticle extends React.Component {
   state = {
@@ -36,10 +37,14 @@ export default class PostArticle extends React.Component {
 
     if (topic === 'New Topic') {
       addTopic(newTopicSlug, newTopicDescription).then(
-        postArticle(title, newTopicSlug, body, author)
+        postArticle(title, newTopicSlug, body, author).then(({ data }) =>
+          navigate(`/articles/${data.article.article_id}`)
+        )
       );
     } else {
-      postArticle(title, topic, body, author);
+      postArticle(title, topic, body, author).then(({ data }) =>
+        navigate(`/articles/${data.article.article_id}`)
+      );
     }
   };
 
