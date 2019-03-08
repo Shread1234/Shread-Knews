@@ -7,6 +7,7 @@ import SingleArticle from './components/SingleArticle';
 import UserLogin from './components/UserLogin';
 import NavBar from './components/NavBar';
 import PostArticle from './components/PostArticle';
+import WrongTurn from './components/WrongTurn';
 
 class App extends Component {
   state = {
@@ -38,6 +39,7 @@ class App extends Component {
           <Articles path="/articles/topic/:topicSlug" user={currentUser} />
           <SingleArticle path="/articles/:article_id" user={currentUser} />
           <PostArticle path="/users/:username/postarticle" user={currentUser} />
+          <WrongTurn path="/*" />
         </Router>
       </div>
     );

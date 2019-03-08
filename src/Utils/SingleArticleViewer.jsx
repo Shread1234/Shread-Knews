@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from '@reach/router';
 import Comments from '../components/Comments';
-import { articleVote, removeArticle } from '../Utils/Axios';
+import { articleVote, removeArticle, postComment } from '../Utils/Axios';
+import PostComment from '../components/PostComment';
 
 export default class SingleArticleViewer extends React.Component {
   state = {
     voteChange: 0,
-    articleRemoved: false
+    articleRemoved: false,
+    commentAdded: false
   };
 
   handleVoteChange = (event) => {
@@ -26,9 +28,19 @@ export default class SingleArticleViewer extends React.Component {
     this.setState({ articleRemoved: true });
   };
 
+  handleAddComment = (event) => {
+    event.preventDefault();
+    const comment = event.target[0].value;
+    const author = this.props.user;
+    const articleId = this.props.article.article_id;
+
+    postComment(comment, author, articleId);
+    this.setState({ commentAdded: true });
+  };
+
   render() {
     const { article, user } = this.props;
-    const { voteChange, articleRemoved } = this.state;
+    const { voteChange, articleRemoved, commentAdded } = this.state;
 
     if (articleRemoved) return <h1>Article Deleted!</h1>;
 
@@ -83,6 +95,8 @@ export default class SingleArticleViewer extends React.Component {
                 </button>
               )}
               <br />
+              {commentAdded && <p>Comment Added!</p>}
+              {user && <PostComment handleAddComment={this.handleAddComment} />}
               <Comments user={user} article_id={article.article_id} />
             </div>
           ))}

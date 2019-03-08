@@ -60,3 +60,10 @@ export function removeArticle(articleId) {
 export function removeComment(commentId) {
   return axios.delete(`${baseURL}comments/${commentId}`);
 }
+
+export function postComment(comment, author, articleId) {
+  return axios.post(`${baseURL}articles/${articleId}/comments`, {
+    username: author,
+    body: comment
+  });
+}
