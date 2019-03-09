@@ -6,8 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: slategrey;
-  color: black;
+  background: rgb(80, 96, 112);
+  color: white;
 }
 
 code {
@@ -90,7 +90,7 @@ h1 {
 
 .link {
   text-decoration: none;
-  color: black;
+  color: white;
   font-weight: bold;
 }
 

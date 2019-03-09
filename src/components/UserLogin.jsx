@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from '@reach/router';
-import { userCheck } from '../Utils/Axios';
+import { userCheck } from '../Utils/api';
 
 class UserLogin extends React.Component {
   state = {

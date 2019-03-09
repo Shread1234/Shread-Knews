@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { getAllTopics } from '../Utils/Axios';
+import { getAllTopics } from '../Utils/api';
 import TopicViewer from './TopicViewer';
 
 export default class Topics extends React.Component {
@@ -20,7 +20,7 @@ export default class Topics extends React.Component {
         <br />
         <br />
         <h1 id="allTopicsTitle">Topics</h1>
-        <TopicViewer topics={topics} handleClick={this.handleClick} />
+        <TopicViewer topics={topics} />
       </div>
     );
   }

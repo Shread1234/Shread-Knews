@@ -1,5 +1,5 @@
 import React from 'react';
-import { getCommentsByArticle } from '../Utils/Axios';
+import { getCommentsByArticle } from '../Utils/api';
 import CommentsViewer from './CommentsViewer';
 
 export default class Comments extends React.Component {

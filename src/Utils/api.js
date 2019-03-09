@@ -34,9 +34,7 @@ export function allArticlesOrder(value) {
 }
 
 export function topicArticlesOrder(value, topic) {
-  return axios.get(
-    `${baseURL}articles?topic=${topic}&sort_by=${sort_by[value]}`
-  );
+  return axios.get(`${baseURL}articles?topic=${topic}&${sort_by[value]}`);
 }
 
 export function userCheck(user) {

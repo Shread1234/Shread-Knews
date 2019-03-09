@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAllTopics, postArticle, addTopic } from '../Utils/Axios';
+import { getAllTopics, postArticle, addTopic } from '../Utils/api';
 import PostArticleForm from './PostArticleForm';
 import { navigate } from '@reach/router';
 
@@ -27,7 +27,6 @@ export default class PostArticle extends React.Component {
   };
 
   addArticle = (event) => {
-    console.log(this.state.topics);
     event.preventDefault();
     const newTopicSlug = this.state.newTopicSlug;
     const newTopicDescription = this.state.newTopicDescription;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from '@reach/router';
-import { commentVote, removeComment } from '../Utils/Axios';
+import { commentVote, removeComment } from '../Utils/api';
 
 export default class SingleComment extends React.Component {
   state = {
@@ -10,7 +10,7 @@ export default class SingleComment extends React.Component {
 
   handleVoteChange = (event) => {
     const vote = Number(event.target.value);
-    const commentId = Number(event.target.parentNode.parentNode.firstChild.id);
+    const commentId = Number(this.props.comment.comment_id);
     commentVote(commentId, vote);
     this.setState((prevState) => {
       return {
@@ -19,8 +19,8 @@ export default class SingleComment extends React.Component {
     });
   };
 
-  handleDelete = (event) => {
-    const commentId = Number(event.target.parentNode.parentNode.firstChild.id);
+  handleDelete = () => {
+    const commentId = Number(this.props.comment.comment_id);
     removeComment(commentId);
     this.setState({ commentRemoved: true });
   };

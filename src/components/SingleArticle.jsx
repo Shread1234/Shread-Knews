@@ -1,6 +1,7 @@
 import React from 'react';
-import { getArticleById } from '../Utils/Axios';
+import { getArticleById } from '../Utils/api';
 import SingleArticleViewer from './SingleArticleViewer';
+import { navigate } from '@reach/router';
 
 export default class SingleArticle extends React.Component {
   state = {
@@ -9,9 +10,11 @@ export default class SingleArticle extends React.Component {
 
   componentDidMount() {
     const { article_id } = this.props;
-    getArticleById(article_id).then(({ data }) =>
-      this.setState({ currentArticle: data.article })
-    );
+    getArticleById(article_id)
+      .then(({ data }) => this.setState({ currentArticle: data.article }))
+      .catch(() => {
+        navigate('/error');
+      });
   }
 
   render() {

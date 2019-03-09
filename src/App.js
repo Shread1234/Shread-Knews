@@ -17,7 +17,6 @@ class App extends Component {
   componentDidMount() {
     const user = localStorage.getItem('loggedInUser');
     user !== null && this.setState({ currentUser: user });
-    console.log(this.state.currentUser);
   }
 
   setUser = () => {
@@ -41,12 +40,12 @@ class App extends Component {
         />
         <Router>
           <Home path="/" user={currentUser} />
-          <Articles path="/articles" user={currentUser} />
+          <Articles path="/articles/all" user={currentUser} />
           <Topics path="/topics" user={currentUser} />
           <Articles path="/articles/topic/:topicSlug" user={currentUser} />
           <SingleArticle path="/articles/:article_id" user={currentUser} />
           <PostArticle path="/users/:username/postarticle" user={currentUser} />
-          <WrongTurn path="/*" />
+          <WrongTurn default path="/error" />
         </Router>
       </div>
     );

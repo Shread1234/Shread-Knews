@@ -3,33 +3,44 @@ import {
   getAllArticles,
   allArticlesOrder,
   topicArticlesOrder
-} from '../Utils/Axios';
+} from '../Utils/api';
 import ArticleViewer from './ArticleViewer';
 import ArticleOrder from '../components/ArticleOrder';
 import { Link } from '@reach/router';
 
 export default class Articles extends React.Component {
   state = {
-    articles: null,
-    articleOrder: null
+    articles: null
+  };
+
+  getArticles = () => {
+    const { topicSlug } = this.props;
+    getAllArticles(topicSlug).then(({ data }) =>
+      this.setState({
+        articles: data.articles
+      })
+    );
   };
 
   componentDidMount() {
-    const { topicSlug } = this.props;
-    getAllArticles(topicSlug).then(({ data }) =>
-      this.setState({ articles: data.articles })
-    );
+    this.getArticles();
   }
+
+  componentWillReceiveProps() {}
 
   changeOrder = (event) => {
     const value = event.target.value;
-    const topic = this.props.topicSlug;
-    topic
-      ? topicArticlesOrder(value, topic).then(({ data }) =>
-          this.setState({ articles: data.articles })
+    const { topicSlug } = this.props;
+    topicSlug
+      ? topicArticlesOrder(value, topicSlug).then(({ data }) =>
+          this.setState({
+            articles: data.articles
+          })
         )
       : allArticlesOrder(value).then(({ data }) =>
-          this.setState({ articles: data.articles })
+          this.setState({
+            articles: data.articles
+          })
         );
   };
 
