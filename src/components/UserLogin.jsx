@@ -68,36 +68,37 @@ class UserLogin extends React.Component {
             >
               {loggedInUser}
             </Link>
+            <br />
+            <br />
+            <button className="button" onClick={this.handleSignOut}>
+              Log Out
+            </button>
           </div>
         )}
         {loggedInUser === null && (
-          <form
-            id="userLogin"
-            onChange={this.handleUserChange}
-            onSubmit={this.handleSubmit}
-          >
-            <input
-              defaultValue={typedUser}
-              type="text"
-              required
-              id="loginBox"
-            />
-          </form>
-        )}
-        <br />
-        {loggedInUser === null && (
-          <button type="submit" form="userLogin" className="button">
-            Login
-          </button>
+          <div>
+            <form
+              id="userLogin"
+              onChange={this.handleUserChange}
+              onSubmit={this.handleSubmit}
+            >
+              <input
+                defaultValue={typedUser}
+                type="text"
+                required
+                id="loginBox"
+              />
+            </form>
+            <br />
+            <button type="submit" form="userLogin" className="button">
+              Login
+            </button>
+          </div>
         )}{' '}
         &nbsp;
-        {loggedInUser === null ? (
+        {loggedInUser === null && (
           <button type="submit" form="userLogin" className="button">
             Sign Up
-          </button>
-        ) : (
-          <button className="button" onClick={this.handleSignOut}>
-            Log Out
           </button>
         )}
       </div>

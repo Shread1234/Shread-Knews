@@ -8,7 +8,11 @@ function NavBar() {
         Home
       </Link>
       <br />
-      <Link className="link" to="/articles/all">
+      <Link
+        className="link"
+        to="/articles/all"
+        onClick={() => window.location.reload()}
+      >
         Articles
       </Link>
       <br />

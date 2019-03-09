@@ -20,9 +20,22 @@ export default class Comments extends React.Component {
     this.getComments();
   };
 
-  render() {
+  componentWillReceiveProps(nextProps) {
     const { comments } = this.state;
 
+    if (nextProps.addedComment === null) return;
+
+    if (comments === null)
+      return this.setState({ comments: [nextProps.addedComment] });
+
+    if (comments[0].comment_id !== nextProps.addedComment.comment_id)
+      this.setState({
+        comments: [nextProps.addedComment, ...this.state.comments]
+      });
+  }
+
+  render() {
+    const { comments } = this.state;
     return (
       <div className="Comments">
         {comments === null && <h3>No Comments Yet</h3>}
