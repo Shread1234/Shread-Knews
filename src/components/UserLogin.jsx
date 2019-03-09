@@ -9,15 +9,16 @@ class UserLogin extends React.Component {
     userError: false
   };
 
-  componentDidMount = () => {
-    this.setState({ loggedInUser: localStorage.getItem('loggedInUser') });
-  };
-
   handleUserChange = (event) => {
     event.preventDefault();
     const value = event.target.value;
     this.setState({ typedUser: value });
   };
+
+  componentDidMount() {
+    if (localStorage.getItem('loggedInUser') !== '')
+      this.setState({ loggedInUser: localStorage.getItem('loggedInUser') });
+  }
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -27,18 +28,17 @@ class UserLogin extends React.Component {
         ? this.setState({ typedUser: '', userError: true })
         : this.setState(
             {
-              loggedInUser: data.user.username,
+              loggedInUser: user,
               typedUser: '',
               userError: false
             },
             () => this.saveUser()
           )
     );
-    document.getElementById('userLogin').reset();
   };
 
   handleSignOut = () => {
-    this.setState({ loggedInUser: '' }, () =>
+    this.setState({ loggedInUser: null }, () =>
       localStorage.setItem('loggedInUser', '')
     );
     this.props.removeUser();
@@ -50,15 +50,15 @@ class UserLogin extends React.Component {
   };
 
   render() {
-    const { userError, loggedInUser } = this.state;
+    const { userError, loggedInUser, typedUser } = this.state;
     return (
       <div id="homeUserLogin">
-        {userError === true && loggedInUser === '' ? (
-          <p className="initialLogin">Invalid Username</p>
+        {userError === true && loggedInUser === null ? (
+          <p className="initialLogin">Username Not Found</p>
         ) : (
-          loggedInUser === '' && <p className="initialLogin">Login Here</p>
+          loggedInUser === null && <p className="initialLogin">Login Here</p>
         )}
-        {loggedInUser !== '' && (
+        {loggedInUser !== null && (
           <div>
             <p id="loggedInAs">Logged In As</p>
             <Link
@@ -70,23 +70,28 @@ class UserLogin extends React.Component {
             </Link>
           </div>
         )}
-        {loggedInUser === '' && (
+        {loggedInUser === null && (
           <form
             id="userLogin"
             onChange={this.handleUserChange}
             onSubmit={this.handleSubmit}
           >
-            <input defaultValue="" type="text" required id="loginBox" />
+            <input
+              defaultValue={typedUser}
+              type="text"
+              required
+              id="loginBox"
+            />
           </form>
         )}
         <br />
-        {loggedInUser === '' && (
+        {loggedInUser === null && (
           <button type="submit" form="userLogin" className="button">
             Login
           </button>
         )}{' '}
         &nbsp;
-        {loggedInUser === '' ? (
+        {loggedInUser === null ? (
           <button type="submit" form="userLogin" className="button">
             Sign Up
           </button>

@@ -11,15 +11,21 @@ import WrongTurn from './components/WrongTurn';
 
 class App extends Component {
   state = {
-    currentUser: localStorage.getItem('loggedInUser')
+    currentUser: null
   };
+
+  componentDidMount() {
+    const user = localStorage.getItem('loggedInUser');
+    user !== null && this.setState({ currentUser: user });
+    console.log(this.state.currentUser);
+  }
 
   setUser = () => {
     this.setState({ currentUser: localStorage.getItem('loggedInUser') });
   };
 
   removeUser = () => {
-    this.setState({ currentUser: '' });
+    this.setState({ currentUser: null });
   };
 
   render() {
@@ -31,7 +37,7 @@ class App extends Component {
           id="userLogin"
           setUser={this.setUser}
           removeUser={this.removeUser}
-          currentUser={this.currentUser}
+          currentUser={currentUser}
         />
         <Router>
           <Home path="/" user={currentUser} />

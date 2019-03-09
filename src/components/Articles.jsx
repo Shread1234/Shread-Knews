@@ -46,7 +46,7 @@ export default class Articles extends React.Component {
         </h1>
         <ArticleOrder changeOrder={this.changeOrder} />
         <br />
-        {user.length > 0 && (
+        {user !== null && (
           <Link className="link" to={`/users/${user}/postarticle`}>
             <button className="button">Post New Article</button>
           </Link>
