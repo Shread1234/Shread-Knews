@@ -1,6 +1,6 @@
 import React from 'react';
 import { getArticleById } from '../Utils/Axios';
-import SingleArticleViewer from '../Utils/SingleArticleViewer';
+import SingleArticleViewer from './SingleArticleViewer';
 
 export default class SingleArticle extends React.Component {
   state = {

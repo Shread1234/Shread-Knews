@@ -6,8 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: black;
-  color: white;
+  background: slategrey;
+  color: black;
 }
 
 code {
@@ -86,4 +86,47 @@ h1 {
   position: relative;
   top: 0%;
   right: -30%;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.initialLogin {
+  font-weight: bold;
+}
+
+.button {
+  border-radius: 6px;
+}
+
+textarea {
+  resize: none;
+}
+
+.fadeRepo {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeRepo {
+  text-align: center;
 }

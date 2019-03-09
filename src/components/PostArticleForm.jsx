@@ -55,7 +55,7 @@ export default function PostArticleForm({
       </form>
       <button
         type="submit"
-        id="postNewArticle"
+        className="button"
         form="newArticle"
         onClick={addArticle}
       >

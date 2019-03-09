@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { getAllTopics } from '../Utils/Axios';
-import TopicViewer from '../Utils/TopicViewer';
+import TopicViewer from './TopicViewer';
 
 export default class Topics extends React.Component {
   state = {

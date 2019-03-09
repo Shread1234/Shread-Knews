@@ -4,7 +4,7 @@ import {
   allArticlesOrder,
   topicArticlesOrder
 } from '../Utils/Axios';
-import ArticleViewer from '../Utils/ArticleViewer';
+import ArticleViewer from './ArticleViewer';
 import ArticleOrder from '../components/ArticleOrder';
 import { Link } from '@reach/router';
 
@@ -47,8 +47,8 @@ export default class Articles extends React.Component {
         <ArticleOrder changeOrder={this.changeOrder} />
         <br />
         {user.length > 0 && (
-          <Link to={`/users/${user}/postarticle`}>
-            <button>Post New Article</button>
+          <Link className="link" to={`/users/${user}/postarticle`}>
+            <button className="button">Post New Article</button>
           </Link>
         )}
         <ArticleViewer articles={articles} />

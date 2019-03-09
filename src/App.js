@@ -31,6 +31,7 @@ class App extends Component {
           id="userLogin"
           setUser={this.setUser}
           removeUser={this.removeUser}
+          currentUser={this.currentUser}
         />
         <Router>
           <Home path="/" user={currentUser} />

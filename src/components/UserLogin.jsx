@@ -5,7 +5,7 @@ import { userCheck } from '../Utils/Axios';
 class UserLogin extends React.Component {
   state = {
     typedUser: '',
-    loggedInUser: localStorage.getItem('loggedInUser'),
+    loggedInUser: this.props.currentUser,
     userError: false
   };
 
@@ -61,7 +61,11 @@ class UserLogin extends React.Component {
         {loggedInUser !== '' && (
           <div>
             <p id="loggedInAs">Logged In As</p>
-            <Link to={`/users/${loggedInUser}`} id="loggedInUserLink">
+            <Link
+              className="link"
+              to={`/users/${loggedInUser}`}
+              id="loggedInUserLink"
+            >
               {loggedInUser}
             </Link>
           </div>
@@ -77,17 +81,17 @@ class UserLogin extends React.Component {
         )}
         <br />
         {loggedInUser === '' && (
-          <button type="submit" form="userLogin" id="loginButton">
+          <button type="submit" form="userLogin" className="button">
             Login
           </button>
         )}{' '}
         &nbsp;
         {loggedInUser === '' ? (
-          <button type="submit" form="userLogin" id="signUpButton">
+          <button type="submit" form="userLogin" className="button">
             Sign Up
           </button>
         ) : (
-          <button id="signOutButton" onClick={this.handleSignOut}>
+          <button className="button" onClick={this.handleSignOut}>
             Log Out
           </button>
         )}

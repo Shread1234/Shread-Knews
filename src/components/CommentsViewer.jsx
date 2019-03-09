@@ -1,5 +1,5 @@
 import React from 'react';
-import SingleComment from '../components/SingleComment';
+import SingleComment from './SingleComment';
 
 export default function CommentsViewer(props) {
   const { comments, user } = props;

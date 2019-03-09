@@ -9,7 +9,11 @@ export default function ArticleViewer(props) {
       {articles !== null &&
         articles.map((article) => (
           <div key={article.article_id}>
-            <Link id="linkArticleTitle" to={`/articles/${article.article_id}`}>
+            <Link
+              className="link"
+              id="linkArticleTitle"
+              to={`/articles/${article.article_id}`}
+            >
               {article.title}
             </Link>
             <li className="articlePrev">
@@ -18,7 +22,11 @@ export default function ArticleViewer(props) {
             <br />
             <li className="articlePrev">
               By:{' '}
-              <Link id="toArticleAuth" to={`/users/${article.author}`}>
+              <Link
+                className="link"
+                id="toArticleAuth"
+                to={`/users/${article.author}`}
+              >
                 {article.author}
               </Link>{' '}
               &nbsp; Posted: {new Date(article.created_at).toUTCString()}

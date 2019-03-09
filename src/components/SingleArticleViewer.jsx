@@ -55,14 +55,15 @@ export default class SingleArticleViewer extends React.Component {
               <br />
               <h1>{article.title}</h1>
               <br />
-              By: <Link to={`/users/${article.author}`}>
+              By:{' '}
+              <Link className="link" to={`/users/${article.author}`}>
                 {' '}
                 {article.author}
               </Link>{' '}
               &nbsp;&nbsp;&nbsp;&nbsp;Posted:{' '}
               {new Date(article.created_at).toUTCString()}{' '}
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Topic:{' '}
-              <Link to={`/articles/topic/${article.topic}`}>
+              <Link className="link" to={`/articles/topic/${article.topic}`}>
                 {article.topic}
               </Link>
               <p>{article.body}</p>
@@ -75,7 +76,7 @@ export default class SingleArticleViewer extends React.Component {
                   <button
                     disabled={voteChange === 1}
                     onClick={this.handleVoteChange}
-                    id="articleUpVote"
+                    className="button"
                     value="1"
                   >
                     Up Vote
@@ -83,7 +84,7 @@ export default class SingleArticleViewer extends React.Component {
                   <button
                     disabled={voteChange === -1}
                     onClick={this.handleVoteChange}
-                    id="articleDownVote"
+                    className="button"
                     value="-1"
                   >
                     Down Vote
@@ -91,7 +92,7 @@ export default class SingleArticleViewer extends React.Component {
                 </div>
               )}
               {user === article.author && (
-                <button id="deleteArticle" onClick={this.handleDelete}>
+                <button className="button" onClick={this.handleDelete}>
                   Delete Article
                 </button>
               )}

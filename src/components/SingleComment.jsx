@@ -33,8 +33,10 @@ export default class SingleComment extends React.Component {
     return (
       <div key={comment.comment_id}>
         <li id={comment.comment_id} className="commentsList">
-          <Link to={`/users/${comment.author}`}>{comment.author}</Link> &nbsp;
-          Votes: {comment.votes + voteChange} &nbsp; Posted:{' '}
+          <Link className="link" to={`/users/${comment.author}`}>
+            {comment.author}
+          </Link>{' '}
+          &nbsp; Votes: {comment.votes + voteChange} &nbsp; Posted:{' '}
           {new Date(comment.created_at).toUTCString()}
         </li>
         <br />
@@ -43,7 +45,7 @@ export default class SingleComment extends React.Component {
         {user && (
           <div>
             <button
-              id="commentUpVote"
+              className="button"
               value="1"
               onClick={this.handleVoteChange}
               disabled={voteChange === 1}
@@ -51,7 +53,7 @@ export default class SingleComment extends React.Component {
               Up Vote
             </button>
             <button
-              id="commentDownVote"
+              className="button"
               value="-1"
               onClick={this.handleVoteChange}
               disabled={voteChange === -1}
@@ -59,7 +61,7 @@ export default class SingleComment extends React.Component {
               Down Vote
             </button>
             {user === comment.author && (
-              <button id="deleteComment" onClick={this.handleDelete}>
+              <button className="button" onClick={this.handleDelete}>
                 Delete Comment
               </button>
             )}

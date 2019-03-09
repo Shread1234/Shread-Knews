@@ -1,6 +1,6 @@
 import React from 'react';
 import { getCommentsByArticle } from '../Utils/Axios';
-import CommentsViewer from '../Utils/CommentsViewer';
+import CommentsViewer from './CommentsViewer';
 
 export default class Comments extends React.Component {
   state = {
