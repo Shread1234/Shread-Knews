@@ -37,8 +37,11 @@ export default function PostArticleForm({
               id="newTopicSlug"
               required
             />{' '}
-            &nbsp; Description:{' '}
-            <input onChange={formChange} id="newTopicDescription" required />
+            &nbsp;{' '}
+            <p>
+              Description:{' '}
+              <input onChange={formChange} id="newTopicDescription" required />
+            </p>
           </div>
         )}
         <br />

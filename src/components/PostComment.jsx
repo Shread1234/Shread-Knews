@@ -5,7 +5,7 @@ export default function PostComment({ author, articleId, handleAddComment }) {
     <div>
       <form id="addComment" onSubmit={handleAddComment}>
         <p>Add A Comment</p>
-        <textarea rows="3" cols="45" placeholder="Be Constructive!" />
+        <textarea rows="3" cols="45" placeholder="Be Constructive!" required />
         <br />
         <button type="submit" form="addComment" className="button">
           Add

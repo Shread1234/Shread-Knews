@@ -28,8 +28,6 @@ export default class Articles extends React.Component {
     this.getArticles();
   }
 
-  componentWillReceiveProps() {}
-
   changeOrder = (event) => {
     const value = event.target.value;
     const { topicSlug } = this.props;
@@ -46,10 +44,13 @@ export default class Articles extends React.Component {
         );
   };
 
+  componentDidUpdate() {
+    this.props.reloading === true && this.getArticles();
+  }
+
   render() {
     const { articles, loading } = this.state;
     const { topicSlug, user } = this.props;
-    console.log(user);
     return (
       <div className="Articles">
         <br />

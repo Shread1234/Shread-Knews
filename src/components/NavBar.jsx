@@ -1,18 +1,14 @@
 import React from 'react';
 import { Link } from '@reach/router';
 
-function NavBar() {
+function NavBar(props) {
   return (
     <nav>
       <Link className="link" to="/">
         Home
       </Link>
       <br />
-      <Link
-        className="link"
-        to="/articles/all"
-        onClick={() => window.location.reload()}
-      >
+      <Link className="link" to="/articles/all" onClick={props.reloadArticles}>
         Articles
       </Link>
       <br />
