@@ -5,10 +5,10 @@ export default function ArticleViewer(props) {
   const { articles } = props;
 
   return (
-    <ul>
+    <ul className="articleViewer">
       {articles !== null &&
         articles.map((article) => (
-          <div key={article.article_id}>
+          <div id="allArticles" key={article.article_id}>
             <Link
               className="link"
               id="linkArticleTitle"

@@ -5,7 +5,7 @@ export default function CommentsViewer(props) {
   const { comments, user } = props;
   return (
     <div>
-      <ul>
+      <ul id="commentsViewer">
         <h3>Comments</h3>
         {comments !== null &&
           comments.map((comment) => (

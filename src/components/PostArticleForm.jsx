@@ -8,7 +8,7 @@ export default function PostArticleForm({
   formChange
 }) {
   return (
-    <div>
+    <div id="postArticleForm">
       <form className="newArticle" onSubmit={addArticle}>
         <br />
         Title: <input id="articleTitle" required onChange={formChange} />

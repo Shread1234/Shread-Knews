@@ -130,3 +130,47 @@ textarea {
 .fadeRepo {
   text-align: center;
 }
+
+.articleViewer {
+  margin-left: 0%;
+  padding: 0%;
+}
+
+#singleArticle {
+  padding: 0%;
+}
+
+#commentsViewer {
+  padding: 0%;
+}
+
+#postArticleForm {
+  margin: auto;
+  margin-top: 9%;
+}
+
+#signUp {
+  right: 0%;
+  position: absolute;
+  margin-top: 0%;
+}
+
+#logOut {
+  right: 0%;
+  position: absolute;
+}
+
+#loggedInUserLink {
+  right: 0%;
+  position: absolute;
+  top: 40%;
+}
+
+#loggedinAs {
+  right: 0%;
+  position: absolute;
+}
+
+#topicsViewer {
+  padding: 0%;
+}

@@ -3,6 +3,7 @@ import { Link } from '@reach/router';
 import Comments from '../components/Comments';
 import { articleVote, removeArticle, postComment } from '../Utils/api';
 import PostComment from '../components/PostComment';
+import { navigate } from '@reach/router/lib/history';
 
 export default class SingleArticleViewer extends React.Component {
   state = {
@@ -27,6 +28,7 @@ export default class SingleArticleViewer extends React.Component {
     const articleId = this.props.article.article_id;
     removeArticle(articleId);
     this.setState({ articleRemoved: true });
+    setTimeout(() => navigate('/'), 1200);
   };
 
   handleAddComment = (event) => {
@@ -53,7 +55,7 @@ export default class SingleArticleViewer extends React.Component {
     if (articleRemoved) return <h1>Article Deleted!</h1>;
 
     return (
-      <ul>
+      <ul id="singleArticle">
         {article !== null && (
           <div key={article.article_id}>
             <br />
@@ -66,14 +68,17 @@ export default class SingleArticleViewer extends React.Component {
               {' '}
               {article.author}
             </Link>{' '}
-            &nbsp;&nbsp;&nbsp;&nbsp;Posted:{' '}
-            {new Date(article.created_at).toUTCString()}{' '}
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Topic:{' '}
-            <Link className="link" to={`/articles/topic/${article.topic}`}>
-              {article.topic}
-            </Link>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <p>Posted: {new Date(article.created_at).toUTCString()}</p>{' '}
+            <p>
+              Topic:{' '}
+              <Link className="link" to={`/articles/topic/${article.topic}`}>
+                {article.topic}
+              </Link>
+            </p>
             <p>{article.body}</p>
             <p>
+              <br />
               Comments: {article.comment_count} &nbsp; Votes:{' '}
               {article.votes + voteChange}
             </p>
@@ -97,6 +102,7 @@ export default class SingleArticleViewer extends React.Component {
                 </button>
               </div>
             )}
+            <br />
             {user === article.author && (
               <button className="button" onClick={this.handleDelete}>
                 Delete Article

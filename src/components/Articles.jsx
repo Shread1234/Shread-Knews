@@ -10,14 +10,16 @@ import { Link } from '@reach/router';
 
 export default class Articles extends React.Component {
   state = {
-    articles: null
+    articles: null,
+    loading: true
   };
 
   getArticles = () => {
     const { topicSlug } = this.props;
     getAllArticles(topicSlug).then(({ data }) =>
       this.setState({
-        articles: data.articles
+        articles: data.articles,
+        loading: false
       })
     );
   };
@@ -45,8 +47,9 @@ export default class Articles extends React.Component {
   };
 
   render() {
-    const { articles } = this.state;
+    const { articles, loading } = this.state;
     const { topicSlug, user } = this.props;
+    console.log(user);
     return (
       <div className="Articles">
         <br />
@@ -57,11 +60,12 @@ export default class Articles extends React.Component {
         </h1>
         <ArticleOrder changeOrder={this.changeOrder} />
         <br />
-        {user !== null && (
+        {user !== null && user.length > 0 && (
           <Link className="link" to={`/users/${user}/postarticle`}>
             <button className="button">Post New Article</button>
           </Link>
         )}
+        {loading && <h2>Articles Loading</h2>}
         <ArticleViewer articles={articles} />
       </div>
     );

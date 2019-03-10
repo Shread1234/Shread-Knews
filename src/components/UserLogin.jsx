@@ -70,7 +70,7 @@ class UserLogin extends React.Component {
             </Link>
             <br />
             <br />
-            <button className="button" onClick={this.handleSignOut}>
+            <button id="logOut" className="button" onClick={this.handleSignOut}>
               Log Out
             </button>
           </div>
@@ -92,14 +92,13 @@ class UserLogin extends React.Component {
             <br />
             <button type="submit" form="userLogin" className="button">
               Login
-            </button>
+            </button>{' '}
+            {loggedInUser === null && (
+              <button form="userLogin" className="button" id="signUp">
+                Sign Up
+              </button>
+            )}
           </div>
-        )}{' '}
-        &nbsp;
-        {loggedInUser === null && (
-          <button type="submit" form="userLogin" className="button">
-            Sign Up
-          </button>
         )}
       </div>
     );
