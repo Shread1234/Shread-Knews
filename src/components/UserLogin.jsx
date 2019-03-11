@@ -26,7 +26,8 @@ class UserLogin extends React.Component {
     const user = this.state.typedUser;
     userCheck(user).then(({ data }) =>
       data.user === undefined
-        ? this.setState({ typedUser: '', userError: true })
+        ? this.setState({ typedUser: '', userError: true }) ||
+          setTimeout(() => this.setState({ userError: false }), 3000)
         : this.setState(
             {
               loggedInUser: user,

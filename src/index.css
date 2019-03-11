@@ -173,3 +173,15 @@ textarea {
 #topicsViewer {
   padding: 0%;
 }
+
+#homeLogins {
+  list-style-type: none;
+  font-size: 90%;
+  text-align: center;
+  word-wrap: normal;
+  padding: 0%;
+}
+
+#homeSuggestion {
+  font-size: 90%;
+}

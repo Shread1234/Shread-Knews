@@ -41,15 +41,15 @@ export default class SignUp extends React.Component {
   };
 
   render() {
+    const { currentUser } = this.props;
+    const { signedUp, userError } = this.state;
     return (
       <div>
         <br />
-        {this.props.currentUser && <h1>Already Signed In</h1>}
-        {this.state.signedUp && !this.props.currentUser && (
-          <h1>Sign in above</h1>
-        )}
+        {currentUser && <h1>Already Signed In</h1>}
+        {this.state.signedUp && !currentUser && <h1>Sign in above</h1>}
 
-        {!this.props.currentUser && !this.state.signedUp && (
+        {!currentUser && !signedUp && (
           <>
             <h1>Sign Up</h1>
             <form
@@ -58,7 +58,7 @@ export default class SignUp extends React.Component {
               onSubmit={this.handleSubmit}
             >
               <p>Username:</p>
-              {this.state.userError && <p>Username already Exists!</p>}
+              {userError && <p>Username already Exists!</p>}
               <input id="newUserName" required />
               <p>Avatar URL:</p>
               <input id="newUserAvatar" />
