@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@reach/router';
 
 export default function LoggedOut(props) {
   return (
@@ -19,9 +20,11 @@ export default function LoggedOut(props) {
       <button type="submit" form="userLogin" className="button">
         Login
       </button>{' '}
-      <button form="userLogin" className="button" id="signUp">
-        Sign Up
-      </button>
+      <Link to="/signUp">
+        <button className="button" id="signUp">
+          Sign Up
+        </button>
+      </Link>
     </div>
   );
 }

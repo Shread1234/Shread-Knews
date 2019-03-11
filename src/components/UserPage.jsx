@@ -19,6 +19,7 @@ export default class UserPage extends React.Component {
     const { articles, loading } = this.state;
     return (
       <div>
+        <br />
         <h2>{`${username}'s Articles`}</h2>
         <div id="userArticles">
           {!loading && <ArticleViewer articles={articles} />}

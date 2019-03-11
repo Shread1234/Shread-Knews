@@ -87,3 +87,15 @@ export function addTopic(newTopicSlug, newTopicDescription) {
 export function userArticles(username) {
   return axios.get(`${baseURL}articles?author=${username}`);
 }
+
+export function getUsers() {
+  return axios.get(`${baseURL}users`);
+}
+
+export function addUser(newUserName, newUserAvatar, newName) {
+  return axios.post(`${baseURL}users`, {
+    username: newUserName,
+    avatar_url: newUserAvatar,
+    name: newName
+  });
+}
