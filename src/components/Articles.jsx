@@ -57,7 +57,7 @@ export default class Articles extends React.Component {
         <br />
         <br />
         <h1 id="allArticlesTitle">
-          {topicSlug ? `Articles on ${topicSlug}` : 'All Articles'}
+          {topicSlug === 'all' ? 'All Articles' : `Articles on ${topicSlug}`}
         </h1>
         <ArticleOrder changeOrder={this.changeOrder} />
         <br />
