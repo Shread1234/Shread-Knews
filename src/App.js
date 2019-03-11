@@ -11,8 +11,7 @@ import WrongTurn from './components/WrongTurn';
 
 class App extends Component {
   state = {
-    currentUser: null,
-    reloading: false
+    currentUser: null
   };
 
   componentDidMount() {
@@ -28,15 +27,8 @@ class App extends Component {
     this.setState({ currentUser: null });
   };
 
-  reloadArticles = () => {
-    this.setState({ reloading: true });
-    setTimeout(() => {
-      this.setState({ reloading: false });
-    }, 2000);
-  };
-
   render() {
-    const { currentUser, reloading } = this.state;
+    const { currentUser } = this.state;
     return (
       <div className="App">
         <NavBar id="navBar" reloadArticles={this.reloadArticles} />
@@ -48,16 +40,12 @@ class App extends Component {
         />
         <Router>
           <Home path="/" user={currentUser} />
-          <Articles
-            path="/articles/all"
-            user={currentUser}
-            reloading={reloading}
-          />
           <Topics path="/topics" user={currentUser} />
           <Articles path="/articles/topic/:topicSlug" user={currentUser} />
           <SingleArticle path="/articles/:article_id" user={currentUser} />
           <PostArticle path="/users/:username/postarticle" user={currentUser} />
           <WrongTurn default path="/error" />
+          {/* <UserPage path="/users/:username" user={currentUser} /> */}
         </Router>
       </div>
     );

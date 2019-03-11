@@ -12,7 +12,7 @@ const sort_by = {
 };
 
 export function getAllArticles(topicSlug) {
-  return topicSlug === undefined
+  return topicSlug === 'all'
     ? axios.get(`${baseURL}articles`)
     : axios.get(`${baseURL}articles?topic=${topicSlug}`);
 }
@@ -34,7 +34,9 @@ export function allArticlesOrder(value) {
 }
 
 export function topicArticlesOrder(value, topic) {
-  return axios.get(`${baseURL}articles?topic=${topic}&${sort_by[value]}`);
+  return topic === 'all'
+    ? axios.get(`${baseURL}articles?${sort_by[value]}`)
+    : axios.get(`${baseURL}articles?topic=${topic}&${sort_by[value]}`);
 }
 
 export function userCheck(user) {
@@ -80,4 +82,8 @@ export function addTopic(newTopicSlug, newTopicDescription) {
     slug: newTopicSlug,
     description: newTopicDescription
   });
+}
+
+export function userArticles(username) {
+  return axios.get(`${baseURL}articles?author=${username}`);
 }

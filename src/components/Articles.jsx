@@ -44,8 +44,8 @@ export default class Articles extends React.Component {
         );
   };
 
-  componentDidUpdate() {
-    this.props.reloading === true && this.getArticles();
+  componentDidUpdate(prevProps) {
+    if (this.props.topicSlug !== prevProps.topicSlug) this.getArticles();
   }
 
   render() {

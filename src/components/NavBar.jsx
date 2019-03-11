@@ -8,7 +8,7 @@ function NavBar(props) {
         Home
       </Link>
       <br />
-      <Link className="link" to="/articles/all" onClick={props.reloadArticles}>
+      <Link className="link" to="/articles/topic/all">
         Articles
       </Link>
       <br />
