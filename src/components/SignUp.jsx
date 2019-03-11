@@ -7,7 +7,7 @@ export default class SignUp extends React.Component {
     newUserName: null,
     newUserAvatar: null,
     newName: null,
-    signUp: false,
+    signedUp: false,
     userError: false
   };
 
@@ -25,7 +25,7 @@ export default class SignUp extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    if (this.props.currentUser) return;
+
     const users = this.state.existingUsers;
 
     if (users.includes(this.state.newUserName))
@@ -45,9 +45,11 @@ export default class SignUp extends React.Component {
       <div>
         <br />
         {this.props.currentUser && <h1>Already Signed In</h1>}
-        {this.state.signedUp ? (
+        {this.state.signedUp && !this.props.currentUser && (
           <h1>Sign in above</h1>
-        ) : (
+        )}
+
+        {!this.props.currentUser && !this.state.signedUp && (
           <>
             <h1>Sign Up</h1>
             <form
