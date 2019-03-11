@@ -6,7 +6,7 @@ export default function ArticleViewer(props) {
 
   return (
     <ul className="articleViewer">
-      {articles !== null &&
+      {articles &&
         articles.map((article) => (
           <div id="allArticles" key={article.article_id}>
             <Link

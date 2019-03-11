@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from '@reach/router';
 import { userCheck } from '../Utils/api';
+import LoggedIn from './LoggedIn';
+import LoggedOut from './LoggedOut';
 
 class UserLogin extends React.Component {
   state = {
@@ -53,52 +54,23 @@ class UserLogin extends React.Component {
     const { userError, loggedInUser, typedUser } = this.state;
     return (
       <div id="homeUserLogin">
-        {userError === true && loggedInUser === null ? (
+        {userError && !loggedInUser ? (
           <p className="initialLogin">Username Not Found</p>
         ) : (
-          loggedInUser === null && <p className="initialLogin">Login Here</p>
+          !loggedInUser && <p className="initialLogin">Login Here</p>
         )}
-        {loggedInUser !== null && (
-          <div>
-            <p id="loggedInAs">Logged In As</p>
-            <Link
-              className="link"
-              to={`/users/${loggedInUser}`}
-              id="loggedInUserLink"
-            >
-              {loggedInUser}
-            </Link>
-            <br />
-            <br />
-            <button id="logOut" className="button" onClick={this.handleSignOut}>
-              Log Out
-            </button>
-          </div>
+        {loggedInUser && (
+          <LoggedIn
+            loggedInUser={loggedInUser}
+            handleSignOut={this.handleSignOut}
+          />
         )}
-        {loggedInUser === null && (
-          <div>
-            <form
-              id="userLogin"
-              onChange={this.handleUserChange}
-              onSubmit={this.handleSubmit}
-            >
-              <input
-                defaultValue={typedUser}
-                type="text"
-                required
-                id="loginBox"
-              />
-            </form>
-            <br />
-            <button type="submit" form="userLogin" className="button">
-              Login
-            </button>{' '}
-            {loggedInUser === null && (
-              <button form="userLogin" className="button" id="signUp">
-                Sign Up
-              </button>
-            )}
-          </div>
+        {!loggedInUser && (
+          <LoggedOut
+            handleUserChange={this.handleUserChange}
+            handleSubmit={this.handleSubmit}
+            typedUser={typedUser}
+          />
         )}
       </div>
     );

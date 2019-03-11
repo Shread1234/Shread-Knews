@@ -31,10 +31,10 @@ export default class PostArticle extends React.Component {
   addArticle = (event) => {
     event.preventDefault();
     const newTopicSlug = this.state.newTopicSlug;
-    const newTopicDescription = this.state.newTopicDescription;
-    const title = this.state.articleTitle;
-    const body = this.state.articleBody;
-    const topic = this.state.selectedTopic;
+    const { newTopicDescription } = this.state;
+    const { articleTitle: title } = this.state;
+    const { articleBody: body } = this.state;
+    const { selectedTopic: topic } = this.state;
     const author = this.props.user;
     const topicSlugs = this.state.topics.map((topic) =>
       topic.slug.toLowerCase()
