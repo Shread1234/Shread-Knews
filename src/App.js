@@ -45,7 +45,12 @@ class App extends Component {
           <Topics path="/topics" user={currentUser} />
           <Articles path="/articles/topic/:topicSlug" user={currentUser} />
           <SingleArticle path="/articles/:article_id" user={currentUser} />
-          <PostArticle path="/users/:username/postarticle" user={currentUser} />
+          {currentUser && (
+            <PostArticle
+              path="/users/:username/postarticle"
+              user={currentUser}
+            />
+          )}
           <WrongTurn default path="/error" />
           <UserPage path="/users/:username" user={currentUser} />
           <SignUp path="/signUp" currentUser={currentUser} />
