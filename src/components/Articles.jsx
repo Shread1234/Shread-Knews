@@ -63,7 +63,9 @@ export default class Articles extends React.Component {
         <br />
         {user !== null && user.length > 0 && (
           <Link className="link" to={`/users/${user}/postarticle`}>
-            <button className="button">Post New Article</button>
+            <button id="postArticle" className="button">
+              Post New Article
+            </button>
           </Link>
         )}
         {loading && <h2>Articles Loading</h2>}

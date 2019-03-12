@@ -6,7 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgb(80, 96, 112);
+  background: black;
   color: white;
 }
 
@@ -184,4 +184,50 @@ textarea {
 
 #homeSuggestion {
   font-size: 90%;
+}
+
+#allArticles {
+  background: rgb(80, 96, 112);
+  margin-bottom: 1%;
+  padding: 1%;
+}
+
+#allArticlesTitle {
+  background: rgb(80, 96, 112);
+  margin: 0%;
+}
+
+.articleViewer {
+  bottom: 0%;
+  top: 29%;
+  width: 100%;
+  position: absolute;
+  margin-bottom: 0%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: auto;
+  margin-right: 1%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: grey;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: white;
+}
+
+#postArticle {
+  margin-bottom: 0.5%;
+  right: 0;
+  position: absolute;
+  top: 21.3%;
 }

@@ -35,7 +35,6 @@ export default function ArticleViewer(props) {
             <li className="articlePrev">
               Votes: {article.votes} &nbsp; Comments: {article.comment_count}
             </li>
-            <br />
           </div>
         ))}
     </ul>
