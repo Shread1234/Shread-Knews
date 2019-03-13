@@ -61,54 +61,54 @@ export default class SingleArticleViewer extends React.Component {
             <br />
             <br />
             <br />
-            <h1>{article.title}</h1>
+            <h1 id="singleArticleTitle">{article.title}</h1>
             <br />
-            By:{' '}
-            <Link className="link" to={`/users/${article.author}`}>
-              {' '}
-              {article.author}
-            </Link>{' '}
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <p>Posted: {new Date(article.created_at).toUTCString()}</p>{' '}
-            <p>
-              Topic:{' '}
-              <Link className="link" to={`/articles/topic/${article.topic}`}>
-                {article.topic}
-              </Link>
-            </p>
-            <p>{article.body}</p>
-            <p>
-              <br />
-              Comments: {article.comment_count} &nbsp; Votes:{' '}
-              {article.votes + voteChange}
-            </p>
-            {user && (
-              <div>
-                <button
-                  disabled={voteChange === 1}
-                  onClick={this.handleVoteChange}
-                  className="button"
-                  value="1"
-                >
-                  Up Vote
-                </button>
-                <button
-                  disabled={voteChange === -1}
-                  onClick={this.handleVoteChange}
-                  className="button"
-                  value="-1"
-                >
-                  Down Vote
-                </button>
-              </div>
-            )}
-            <br />
+            <div id="singleArticleBody">
+              By:{' '}
+              <Link className="link" to={`/users/${article.author}`}>
+                {' '}
+                {article.author}
+              </Link>{' '}
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <p>Posted: {new Date(article.created_at).toUTCString()}</p>{' '}
+              <p>
+                Topic:{' '}
+                <Link className="link" to={`/articles/topic/${article.topic}`}>
+                  {article.topic}
+                </Link>
+              </p>
+              <p>{article.body}</p>
+              <p>
+                <br />
+                Comments: {article.comment_count} &nbsp; Votes:{' '}
+                {article.votes + voteChange}
+              </p>
+              {user && (
+                <div>
+                  <button
+                    disabled={voteChange === 1}
+                    onClick={this.handleVoteChange}
+                    className="button"
+                    value="1"
+                  >
+                    Up Vote
+                  </button>
+                  <button
+                    disabled={voteChange === -1}
+                    onClick={this.handleVoteChange}
+                    className="button"
+                    value="-1"
+                  >
+                    Down Vote
+                  </button>
+                </div>
+              )}
+            </div>
             {user === article.author && (
               <button className="button" onClick={this.handleDelete}>
                 Delete Article
               </button>
             )}
-            <br />
             {commentAdded && <p>Comment Added!</p>}
             {user && <PostComment handleAddComment={this.handleAddComment} />}
             <Comments

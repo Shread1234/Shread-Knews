@@ -103,7 +103,9 @@ h1 {
 }
 
 .button {
-  border-radius: 6px;
+  border-radius: 9px;
+  background: white;
+  color: black;
 }
 
 textarea {
@@ -116,6 +118,9 @@ textarea {
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-duration: 2s;
+  background: rgb(80, 96, 112);
+  margin: none;
+  padding: 1%;
 }
 
 @keyframes fadeInOpacity {
@@ -129,6 +134,7 @@ textarea {
 
 .fadeRepo {
   text-align: center;
+  margin: 0%;
 }
 
 .articleViewer {
@@ -184,6 +190,7 @@ textarea {
 
 #homeSuggestion {
   font-size: 90%;
+  margin-bottom: 0%;
 }
 
 #allArticles {
@@ -218,11 +225,11 @@ textarea {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: grey;
+  background: white;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: white;
+  background: grey;
 }
 
 #postArticle {
@@ -230,4 +237,81 @@ textarea {
   right: 0;
   position: absolute;
   top: 21.3%;
+  background: white;
+}
+
+#postArticle:hover {
+  background: rgb(2, 202, 102);
+  color: white;
+}
+
+#singleArticleTitle {
+  background: rgb(80, 96, 112);
+  margin: 0%;
+}
+
+#singleArticleBody {
+  background: rgb(80, 96, 112);
+  margin-bottom: 1%;
+  padding: 1%;
+}
+
+#addComment {
+  background: rgb(80, 96, 112);
+  margin: 0%;
+  padding: 1%;
+  text-align: center;
+}
+
+#addCommentTitle {
+  margin-top: 0;
+}
+
+#addCommentButton {
+  margin-top: 0.5%;
+}
+
+#addCommentButton:hover {
+  background: rgb(1, 158, 80);
+  color: white;
+  outline: rgb(2, 202, 102);
+}
+
+#addCommentText {
+  width: 100%;
+  background: rgb(44, 54, 63);
+  color: white;
+  border: none;
+}
+
+#addCommentText::placeholder {
+  color: white;
+}
+
+#logOut:hover {
+  background: rgb(214, 17, 17);
+  color: white;
+  border: rgb(214, 17, 17);
+}
+
+#signUp:hover {
+  background: rgb(48, 48, 179);
+  color: white;
+}
+
+#loadingSpinner {
+  height: 200px;
+  width: 50%;
+  margin-left: 43%;
+}
+
+#spinner {
+  width: 30%;
+  height: 70%;
+}
+
+#homeTitle {
+  background: rgb(80, 96, 112);
+  margin: 0%;
+  margin-bottom: 11.5%;
 }

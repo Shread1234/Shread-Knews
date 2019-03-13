@@ -7,6 +7,7 @@ import {
 import ArticleViewer from './ArticleViewer';
 import ArticleOrder from '../components/ArticleOrder';
 import { Link } from '@reach/router';
+import Spinner from 'react-spinkit';
 
 export default class Articles extends React.Component {
   state = {
@@ -68,7 +69,12 @@ export default class Articles extends React.Component {
             </button>
           </Link>
         )}
-        {loading && <h2>Articles Loading</h2>}
+        {loading && (
+          <div id="loadingSpinner">
+            <h2>Articles Loading</h2>
+            <Spinner name="cube-grid" color="white" id="spinner" />
+          </div>
+        )}
         <ArticleViewer articles={articles} />
       </div>
     );

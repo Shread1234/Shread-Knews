@@ -20,7 +20,7 @@ export default class Comments extends React.Component {
     this.getComments();
   };
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(nextProps) {
     const { comments } = this.state;
 
     if (nextProps.addedComment === null) return;
