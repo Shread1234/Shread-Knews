@@ -57,10 +57,7 @@ export default class SingleArticleViewer extends React.Component {
     return (
       <ul id="singleArticle">
         {article !== null && (
-          <div key={article.article_id}>
-            <br />
-            <br />
-            <br />
+          <div id="singleArticleDiv" key={article.article_id}>
             <h1 id="singleArticleTitle">{article.title}</h1>
             <br />
             <div id="singleArticleBody">
@@ -86,6 +83,7 @@ export default class SingleArticleViewer extends React.Component {
               {user && (
                 <div>
                   <button
+                    id="upVote"
                     disabled={voteChange === 1}
                     onClick={this.handleVoteChange}
                     className="button"
@@ -94,6 +92,7 @@ export default class SingleArticleViewer extends React.Component {
                     Up Vote
                   </button>
                   <button
+                    id="downVote"
                     disabled={voteChange === -1}
                     onClick={this.handleVoteChange}
                     className="button"
@@ -105,11 +104,15 @@ export default class SingleArticleViewer extends React.Component {
               )}
             </div>
             {user === article.author && (
-              <button className="button" onClick={this.handleDelete}>
+              <button
+                id="deleteArticle"
+                className="button"
+                onClick={this.handleDelete}
+              >
                 Delete Article
               </button>
             )}
-            {commentAdded && <p>Comment Added!</p>}
+            {commentAdded && <p id="addedComment">Comment Added!</p>}
             {user && <PostComment handleAddComment={this.handleAddComment} />}
             <Comments
               addedComment={addedComment}

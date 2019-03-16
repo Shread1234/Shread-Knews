@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function PostComment({ author, articleId, handleAddComment }) {
+export default function PostComment({ handleAddComment }) {
   return (
     <div>
       <form id="addComment" onSubmit={handleAddComment}>

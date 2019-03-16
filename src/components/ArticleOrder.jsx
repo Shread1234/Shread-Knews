@@ -3,8 +3,8 @@ import React from 'react';
 export default function ArticleOrder(props) {
   return (
     <div id="articleSort">
-      <p>Sort By: </p>
-      <select onChange={props.changeOrder}>
+      <h4 id="sortByTitle">SORT</h4>
+      <select id="sortSelect" onChange={props.changeOrder}>
         <option />
         <option value="Oldest-Newest">Oldest-Newest</option>
         <option value="Newest-Oldest">Newest-Oldest</option>

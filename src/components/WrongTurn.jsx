@@ -5,7 +5,7 @@ export default function WrongTurn() {
     <div>
       <br />
       <br />
-      <h1>You're in the wrong Neighbourhood!</h1>
+      <h1 id="errorMessage">You're in the wrong Neighbourhood!</h1>
     </div>
   );
 }

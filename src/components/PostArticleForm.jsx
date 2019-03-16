@@ -3,7 +3,6 @@ import React from 'react';
 export default function PostArticleForm({
   selectedTopic,
   topics,
-  selectTopic,
   addArticle,
   formChange
 }) {
@@ -61,6 +60,7 @@ export default function PostArticleForm({
         className="button"
         form="newArticle"
         onClick={addArticle}
+        id="postNewArticle"
       >
         Add Article
       </button>

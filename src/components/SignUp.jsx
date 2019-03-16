@@ -35,7 +35,6 @@ export default class SignUp extends React.Component {
     let { newUserAvatar } = this.state;
 
     if (!newUserAvatar) newUserAvatar = '';
-
     addUser(newUserName, newUserAvatar, newName);
     this.setState({ signedUp: true });
   };
@@ -46,27 +45,39 @@ export default class SignUp extends React.Component {
     return (
       <div>
         <br />
-        {currentUser && <h1>Already Signed In</h1>}
-        {this.state.signedUp && !currentUser && <h1>Sign in above</h1>}
+        {currentUser && <h1 id="alreadySigned">Already Signed In</h1>}
+        {this.state.signedUp && !currentUser && (
+          <h1 id="finishSignUp">Sign in above</h1>
+        )}
 
         {!currentUser && !signedUp && (
           <>
-            <h1>Sign Up</h1>
+            <h1 id="signUpTitle">Sign Up</h1>
             <form
               id="signUpForm"
               onChange={this.handleChange}
               onSubmit={this.handleSubmit}
             >
-              <p>Username:</p>
-              {userError && <p>Username already Exists!</p>}
-              <input id="newUserName" required />
-              <p>Avatar URL:</p>
-              <input id="newUserAvatar" />
-              <p>Real Name:</p>
-              <input id="newName" required />
+              <p className="signUpWording">Username*</p>
+              {userError && (
+                <p id="newUserNameError" className="signUpWording">
+                  Username already Exists!
+                </p>
+              )}
+              <input id="newUserName" className="signUpInput" required />
+              <p className="signUpWording">Avatar URL</p>
+              <input id="newUserAvatar" className="signUpInput" />
+              <p className="signUpWording">Real Name*</p>
+
+              <input id="newName" className="signUpInput" required />
               <br />
               <br />
-              <button type="submit" form="signUpForm">
+              <button
+                className="button"
+                type="submit"
+                form="signUpForm"
+                id="signUpFormButton"
+              >
                 Sign Up
               </button>
             </form>

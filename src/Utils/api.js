@@ -29,8 +29,10 @@ export function getCommentsByArticle(article_id) {
   return axios.get(`${baseURL}articles/${article_id}/comments`);
 }
 
-export function allArticlesOrder(value) {
-  return axios.get(`${baseURL}articles?${sort_by[value]}`);
+export function allArticlesOrder(value, username) {
+  return !username
+    ? axios.get(`${baseURL}articles?${sort_by[value]}`)
+    : axios.get(`${baseURL}articles?author=${username}&${sort_by[value]}`);
 }
 
 export function topicArticlesOrder(value, topic) {

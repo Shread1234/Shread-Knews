@@ -7,7 +7,7 @@ export default function TopicViewer(props) {
     <ul id="topicsViewer">
       {topics !== null &&
         topics.map((topic) => (
-          <div key={topic.slug}>
+          <div key={topic.slug} id="topicView">
             <Link className="link" to={`/articles/topic/${topic.slug}`}>
               {topic.slug}
             </Link>

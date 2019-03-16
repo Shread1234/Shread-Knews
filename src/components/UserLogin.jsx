@@ -7,7 +7,8 @@ class UserLogin extends React.Component {
   state = {
     typedUser: '',
     loggedInUser: this.props.currentUser,
-    userError: false
+    userError: false,
+    loading: false
   };
 
   handleUserChange = (event) => {
@@ -24,15 +25,17 @@ class UserLogin extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const user = this.state.typedUser;
+    this.setState({ loading: true });
     userCheck(user).then(({ data }) =>
       data.user === undefined
-        ? this.setState({ typedUser: '', userError: true }) ||
+        ? this.setState({ typedUser: '', userError: true, loading: false }) ||
           setTimeout(() => this.setState({ userError: false }), 3000)
         : this.setState(
             {
               loggedInUser: user,
               typedUser: '',
-              userError: false
+              userError: false,
+              loading: false
             },
             () => this.saveUser()
           )
@@ -52,13 +55,11 @@ class UserLogin extends React.Component {
   };
 
   render() {
-    const { userError, loggedInUser, typedUser } = this.state;
+    const { userError, loggedInUser, typedUser, loading } = this.state;
     return (
       <div id="homeUserLogin">
-        {userError && !loggedInUser ? (
+        {userError && !loggedInUser && (
           <p className="initialLogin">Username Not Found</p>
-        ) : (
-          !loggedInUser && <p className="initialLogin">Login Here</p>
         )}
         {loggedInUser && (
           <LoggedIn
@@ -71,6 +72,8 @@ class UserLogin extends React.Component {
             handleUserChange={this.handleUserChange}
             handleSubmit={this.handleSubmit}
             typedUser={typedUser}
+            loading={loading}
+            userError={userError}
           />
         )}
       </div>

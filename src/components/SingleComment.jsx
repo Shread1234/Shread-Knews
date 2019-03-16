@@ -29,9 +29,9 @@ export default class SingleComment extends React.Component {
     const { comment, user } = this.props;
     const { voteChange, commentRemoved } = this.state;
 
-    if (commentRemoved) return <h2>Comment Deleted!</h2>;
+    if (commentRemoved) return <h2 id="commentRemoved">Comment Deleted!</h2>;
     return (
-      <div key={comment.comment_id}>
+      <div key={comment.comment_id} id="singleComment">
         <li id={comment.comment_id} className="commentsList">
           <Link className="link" to={`/users/${comment.author}`}>
             {comment.author}
@@ -45,6 +45,7 @@ export default class SingleComment extends React.Component {
         {user && (
           <div>
             <button
+              id="upVote"
               className="button"
               value="1"
               onClick={this.handleVoteChange}
@@ -53,6 +54,7 @@ export default class SingleComment extends React.Component {
               Up Vote
             </button>
             <button
+              id="downVote"
               className="button"
               value="-1"
               onClick={this.handleVoteChange}
@@ -61,7 +63,11 @@ export default class SingleComment extends React.Component {
               Down Vote
             </button>
             {user === comment.author && (
-              <button className="button" onClick={this.handleDelete}>
+              <button
+                id="downVote"
+                className="button"
+                onClick={this.handleDelete}
+              >
                 Delete Comment
               </button>
             )}

@@ -33,7 +33,7 @@ class App extends Component {
     const { currentUser } = this.state;
     return (
       <div className="App">
-        <NavBar id="navBar" reloadArticles={this.reloadArticles} />
+        <NavBar reloadArticles={this.reloadArticles} />
         <UserLogin
           id="userLogin"
           setUser={this.setUser}

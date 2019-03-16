@@ -6,7 +6,6 @@ export default function Home() {
       <br />
       <br />
       <br />
-      <h1 id="homeTitle">Shread Knews</h1>
       <div id="homeFade">
         <h2 className="fadeRepo">
           Git Hub Repo:{' '}

@@ -70,9 +70,9 @@ export default class PostArticle extends React.Component {
     return (
       <div>
         <br />
-        <h1>Post An Article</h1>
-        {error && <p>All fields Must Be Filled In</p>}
-        {topicError && <p>Topic Already Exists</p>}
+        <h1 id="postAnArticle">Post An Article</h1>
+        {error && <p id="formError">All fields Must Be Filled In</p>}
+        {topicError && <p id="topicError">Topic Already Exists</p>}
         <PostArticleForm
           topics={topics}
           selectTopic={this.selectTopic}

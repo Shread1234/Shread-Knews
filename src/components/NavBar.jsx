@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from '@reach/router';
 
-function NavBar(props) {
+function NavBar() {
   return (
-    <nav>
-      <Link className="link" to="/">
+    <nav id="navBar">
+      <Link id="homeNav" className="link" to="/">
         Home
       </Link>
       <br />
@@ -15,6 +15,7 @@ function NavBar(props) {
       <Link className="link" to="/topics">
         Topics
       </Link>
+      <h2 id="NavTitle">Shread Knews</h2>
     </nav>
   );
 }

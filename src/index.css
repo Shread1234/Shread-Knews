@@ -84,8 +84,13 @@ h1 {
 
 #loginButton {
   position: relative;
-  top: 0%;
-  right: -30%;
+  top: -1%;
+  font-size: 90%;
+}
+
+#loginButton:hover {
+  background: rgb(2, 202, 102);
+  color: white;
 }
 
 .link {
@@ -106,6 +111,7 @@ h1 {
   border-radius: 9px;
   background: white;
   color: black;
+  border: none;
 }
 
 textarea {
@@ -118,9 +124,9 @@ textarea {
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-duration: 2s;
-  background: rgb(80, 96, 112);
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
   margin: none;
-  padding: 1%;
+  padding: 3%;
 }
 
 @keyframes fadeInOpacity {
@@ -194,14 +200,15 @@ textarea {
 }
 
 #allArticles {
-  background: rgb(80, 96, 112);
+  background-image: linear-gradient(rgb(80, 96, 112), black);
   margin-bottom: 1%;
   padding: 1%;
 }
 
 #allArticlesTitle {
-  background: rgb(80, 96, 112);
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
   margin: 0%;
+  padding: 0%;
 }
 
 .articleViewer {
@@ -234,10 +241,11 @@ textarea {
 
 #postArticle {
   margin-bottom: 0.5%;
-  right: 0;
+  left: 45.5%;
   position: absolute;
-  top: 21.3%;
+  top: 27.5%;
   background: white;
+  border: none;
 }
 
 #postArticle:hover {
@@ -246,18 +254,18 @@ textarea {
 }
 
 #singleArticleTitle {
-  background: rgb(80, 96, 112);
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
   margin: 0%;
 }
 
 #singleArticleBody {
-  background: rgb(80, 96, 112);
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
   margin-bottom: 1%;
   padding: 1%;
 }
 
 #addComment {
-  background: rgb(80, 96, 112);
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
   margin: 0%;
   padding: 1%;
   text-align: center;
@@ -272,9 +280,8 @@ textarea {
 }
 
 #addCommentButton:hover {
-  background: rgb(1, 158, 80);
+  background: rgb(2, 202, 102);
   color: white;
-  outline: rgb(2, 202, 102);
 }
 
 #addCommentText {
@@ -291,7 +298,6 @@ textarea {
 #logOut:hover {
   background: rgb(214, 17, 17);
   color: white;
-  border: rgb(214, 17, 17);
 }
 
 #signUp:hover {
@@ -301,17 +307,222 @@ textarea {
 
 #loadingSpinner {
   height: 200px;
-  width: 50%;
-  margin-left: 43%;
+  width: 100%;
+  text-align: center;
 }
 
 #spinner {
-  width: 30%;
-  height: 70%;
+  width: 19%;
+  height: 60%;
+  margin-left: 40%;
 }
 
 #homeTitle {
   background: rgb(80, 96, 112);
   margin: 0%;
   margin-bottom: 11.5%;
+}
+
+#navBar {
+  text-align: left;
+  font-size: 120%;
+  background-image: linear-gradient(rgb(80, 96, 112), black);
+}
+
+#NavTitle {
+  text-align: center;
+  margin: auto;
+  position: relative;
+  top: -40px;
+  height: 20px;
+  width: 50%;
+}
+
+#singleComment {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+}
+
+#commentRemoved {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+}
+
+#noCommentsTitle {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+}
+
+#articlesLoading {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+}
+
+#userArticlesName {
+  text-align: center;
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+}
+
+#articleSort {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+  text-align: center;
+}
+
+#sortByTitle {
+  margin-top: 2%;
+  margin-bottom: 0%;
+}
+
+#sortSelect {
+  background: rgb(44, 54, 63);
+  color: white;
+}
+
+#allTopicsTitle {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+  margin-top: 5.5%;
+}
+
+#topicView {
+  background-image: linear-gradient(rgb(80, 96, 112), black);
+
+  padding: 1%;
+}
+
+#topicsViewer {
+  bottom: 0%;
+  top: 28%;
+  width: 100%;
+  position: absolute;
+  margin-bottom: 0%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: auto;
+  margin-right: 1%;
+}
+
+#articleTitle {
+  background: rgb(44, 54, 63);
+  color: white;
+}
+
+#selectedTopic {
+  background: rgb(44, 54, 63);
+  color: white;
+}
+
+#newTopicSlug {
+  background: rgb(44, 54, 63);
+  color: white;
+}
+
+#topicsLoading {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+  text-align: center;
+}
+
+#newTopicDescription {
+  background: rgb(44, 54, 63);
+  color: white;
+}
+
+#articleBody {
+  background: rgb(44, 54, 63);
+  color: white;
+}
+
+#postNewArticle {
+  background: white;
+  border: none;
+}
+
+#postNewArticle:hover {
+  background: rgb(2, 202, 102);
+  color: white;
+}
+
+#postAnArticle {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+}
+
+#formError {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+}
+
+#topicError {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+}
+
+#signUpTitle {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+}
+
+.signUpWording {
+  font-weight: bold;
+  text-align: center;
+}
+
+.signUpInput {
+  background: rgb(44, 54, 63);
+  color: white;
+  display: block;
+  margin: auto;
+}
+
+#signUpFormButton:hover {
+  background: rgb(2, 202, 102);
+  color: white;
+}
+
+#loginBox {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+  color: white;
+}
+
+#errorMessage {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+}
+
+#alreadySigned {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+}
+
+#finishSignUp {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+}
+
+#newUserNameError {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+}
+
+#upVote:hover {
+  background: rgb(2, 202, 102);
+  color: white;
+}
+
+#downVote:hover {
+  background: rgb(214, 17, 17);
+  color: white;
+}
+
+#deleteArticle {
+  position: relative;
+  margin-left: 1%;
+}
+
+#deleteArticle:hover {
+  background: rgb(214, 17, 17);
+  color: white;
+}
+
+.singleArticle {
+  bottom: 0%;
+  top: 15%;
+  width: 100%;
+  position: absolute;
+  margin-bottom: 0%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: auto;
+  margin-right: 1%;
+}
+
+#addedComment {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
 }

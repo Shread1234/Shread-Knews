@@ -17,7 +17,7 @@ export default function ArticleViewer(props) {
               {article.title}
             </Link>
             <li className="articlePrev">
-              {article.body.slice(0, 110) + '...'}
+              {article.body.slice(0, 120) + '...'}
             </li>
             <br />
             <li className="articlePrev">

@@ -38,7 +38,7 @@ export default class Comments extends React.Component {
     const { comments } = this.state;
     return (
       <div className="Comments">
-        {comments === null && <h3>No Comments Yet</h3>}
+        {comments === null && <h3 id="noCommentsTitle">No Comments Yet</h3>}
         {comments !== null && (
           <CommentsViewer comments={comments} user={this.props.user} />
         )}

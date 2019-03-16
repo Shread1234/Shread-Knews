@@ -71,8 +71,8 @@ export default class Articles extends React.Component {
         )}
         {loading && (
           <div id="loadingSpinner">
-            <h2>Articles Loading</h2>
-            <Spinner name="cube-grid" color="white" id="spinner" />
+            <h2 id="articlesLoading">Articles Loading</h2>
+            <Spinner name="cube-grid" color="rgb(80, 96, 112)" id="spinner" />
           </div>
         )}
         <ArticleViewer articles={articles} />
