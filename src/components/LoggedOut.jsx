@@ -39,7 +39,15 @@ export default function LoggedOut({
             </Link>
           </>
         ) : (
-          <Spinner name="ball-clip-rotate" color="white" fadeIn="none" />
+          <>
+            <p id="loggingIn">Logging In...</p>
+            <Spinner
+              name="ball-clip-rotate"
+              color="white"
+              fadeIn="none"
+              id="loginLoad"
+            />
+          </>
         )}
       </form>
     </div>

@@ -6,7 +6,6 @@ import {
 } from '../Utils/api';
 import ArticleViewer from './ArticleViewer';
 import ArticleOrder from '../components/ArticleOrder';
-import { Link } from '@reach/router';
 import Spinner from 'react-spinkit';
 
 export default class Articles extends React.Component {
@@ -51,24 +50,13 @@ export default class Articles extends React.Component {
 
   render() {
     const { articles, loading } = this.state;
-    const { topicSlug, user } = this.props;
+    const { topicSlug } = this.props;
     return (
       <div className="Articles">
-        <br />
-        <br />
-        <br />
         <h1 id="allArticlesTitle">
           {topicSlug === 'all' ? 'All Articles' : `Articles on ${topicSlug}`}
         </h1>
         <ArticleOrder changeOrder={this.changeOrder} />
-        <br />
-        {user !== null && user.length > 0 && (
-          <Link className="link" to={`/users/${user}/postarticle`}>
-            <button id="postArticle" className="button">
-              Post New Article
-            </button>
-          </Link>
-        )}
         {loading && (
           <div id="loadingSpinner">
             <h2 id="articlesLoading">Articles Loading</h2>

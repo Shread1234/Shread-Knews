@@ -1,20 +1,25 @@
 import React from 'react';
 import { Link } from '@reach/router';
 
-export default function LoggedIn(props) {
+export default function LoggedIn({ handleSignOut, loggedInUser }) {
   return (
-    <div>
+    <div id="loggedInDiv">
       <p id="loggedInAs">Logged In As</p>
       <Link
         className="link"
-        to={`/users/${props.loggedInUser}`}
+        to={`/users/${loggedInUser}`}
         id="loggedInUserLink"
       >
-        {props.loggedInUser}
+        {loggedInUser}
       </Link>
       <br />
       <br />
-      <button id="logOut" className="button" onClick={props.handleSignOut}>
+      <Link className="link" to={`/users/${loggedInUser}/postarticle`}>
+        <button id="postArticle" className="button">
+          Post Article
+        </button>
+      </Link>
+      <button id="logOut" className="button" onClick={handleSignOut}>
         Log Out
       </button>
     </div>

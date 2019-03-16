@@ -35,13 +35,13 @@ export default class UserPage extends React.Component {
     return (
       <div>
         <br />
-        <h2 id="userArticlesName">{`${username}'s Articles`}</h2>
+        <h1 id="userArticlesName">{`${username}'s Articles`}</h1>
         <div id="userArticles">
-          {noArticles && <h2>No Articles Found</h2>}
+          {noArticles && <h2 id="noUserArticles">No Articles Found</h2>}
           {loading && (
             <Spinner name="cube-grid" color="rgb(80, 96, 112)" id="spinner" />
           )}
-          <ArticleOrder changeOrder={this.changeOrder} />
+          {!noArticles && <ArticleOrder changeOrder={this.changeOrder} />}
           {!loading && <ArticleViewer articles={articles} />}
         </div>
       </div>

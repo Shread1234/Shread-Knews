@@ -10,10 +10,11 @@ export default function PostArticleForm({
     <div id="postArticleForm">
       <form className="newArticle" onSubmit={addArticle}>
         <br />
-        Title: <input id="articleTitle" required onChange={formChange} />
+        <p className="postArticleWording">Title*</p>{' '}
+        <input id="articleTitle" required onChange={formChange} />
         <br />
         <br />
-        Topic: &nbsp;{' '}
+        <p className="postArticleWording">Topic*</p>
         <select required onChange={formChange} id="selectedTopic">
           <option />
           {topics !== null &&
@@ -29,24 +30,20 @@ export default function PostArticleForm({
         {selectedTopic === 'New Topic' && (
           <div>
             <br />
-            Topic Name:{' '}
+            <p className="postArticleWording">Topic Name*</p>
             <input
               onChange={formChange}
               type="text"
               id="newTopicSlug"
               required
             />{' '}
-            &nbsp;{' '}
-            <p>
-              Description:{' '}
-              <input onChange={formChange} id="newTopicDescription" required />
-            </p>
+            &nbsp; <p className="postArticleWording">Description*</p>
+            <input onChange={formChange} id="newTopicDescription" required />
           </div>
         )}
         <br />
         <br />
-        Article Body:
-        <br />
+        <p className="postArticleWording">Article Body*</p>
         <textarea
           onChange={formChange}
           rows="20"
@@ -60,7 +57,7 @@ export default function PostArticleForm({
         className="button"
         form="newArticle"
         onClick={addArticle}
-        id="postNewArticle"
+        id="postArticleButton"
       >
         Add Article
       </button>

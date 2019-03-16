@@ -52,14 +52,14 @@ export default class SingleArticleViewer extends React.Component {
       addedComment
     } = this.state;
 
-    if (articleRemoved) return <h1>Article Deleted!</h1>;
+    if (articleRemoved) return <h1 id="articleDeleted">Article Deleted!</h1>;
 
     return (
       <ul id="singleArticle">
         {article !== null && (
           <div id="singleArticleDiv" key={article.article_id}>
             <h1 id="singleArticleTitle">{article.title}</h1>
-            <br />
+
             <div id="singleArticleBody">
               By:{' '}
               <Link className="link" to={`/users/${article.author}`}>

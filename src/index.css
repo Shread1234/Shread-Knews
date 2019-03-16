@@ -42,16 +42,16 @@ h1 {
 }
 
 #loggedInUserLink {
-  position: absolute;
-  top: 25%;
+  position: relative;
+  top: 95%;
   right: 45%;
-  margin-top: 3%;
+  margin-top: 10%;
 }
 
 #loggedInAs {
   position: relative;
   top: 0%;
-  right: 7%;
+  right: 0%;
   margin-bottom: 4%;
   margin-top: 0%;
 }
@@ -174,12 +174,12 @@ textarea {
 #loggedInUserLink {
   right: 0%;
   position: absolute;
-  top: 40%;
+  top: 14%;
 }
 
 #loggedinAs {
-  right: 0%;
-  position: absolute;
+  right: 0;
+  position: relative;
 }
 
 #topicsViewer {
@@ -209,6 +209,7 @@ textarea {
   background-image: linear-gradient(black, rgb(80, 96, 112), black);
   margin: 0%;
   padding: 0%;
+  margin-top: 2%;
 }
 
 .articleViewer {
@@ -240,12 +241,11 @@ textarea {
 }
 
 #postArticle {
-  margin-bottom: 0.5%;
-  left: 45.5%;
-  position: absolute;
-  top: 27.5%;
   background: white;
   border: none;
+  position: absolute;
+  top: 65%;
+  right: 0;
 }
 
 #postArticle:hover {
@@ -357,6 +357,9 @@ textarea {
 #userArticlesName {
   text-align: center;
   background-image: linear-gradient(black, rgb(80, 96, 112), black);
+  margin: 0%;
+  padding: 0%;
+  margin-top: 0.5%;
 }
 
 #articleSort {
@@ -376,7 +379,8 @@ textarea {
 
 #allTopicsTitle {
   background-image: linear-gradient(black, rgb(80, 96, 112), black);
-  margin-top: 5.5%;
+  margin: 0;
+  margin-top: 2%;
 }
 
 #topicView {
@@ -405,11 +409,17 @@ textarea {
 #selectedTopic {
   background: rgb(44, 54, 63);
   color: white;
+  margin: auto;
+  display: block;
+  margin-top: 1%;
 }
 
 #newTopicSlug {
   background: rgb(44, 54, 63);
   color: white;
+  display: block;
+  margin: auto;
+  margin-top: 1%;
 }
 
 #topicsLoading {
@@ -420,11 +430,16 @@ textarea {
 #newTopicDescription {
   background: rgb(44, 54, 63);
   color: white;
+  display: block;
+  margin: auto;
+  margin-top: 1%;
 }
 
 #articleBody {
   background: rgb(44, 54, 63);
   color: white;
+  display: block;
+  margin: auto;
 }
 
 #postNewArticle {
@@ -463,6 +478,10 @@ textarea {
   color: white;
   display: block;
   margin: auto;
+}
+
+#signUpFormButton {
+  margin-left: 47.5%;
 }
 
 #signUpFormButton:hover {
@@ -513,7 +532,7 @@ textarea {
 
 .singleArticle {
   bottom: 0%;
-  top: 15%;
+  top: 16%;
   width: 100%;
   position: absolute;
   margin-bottom: 0%;
@@ -525,4 +544,58 @@ textarea {
 
 #addedComment {
   background-image: linear-gradient(black, rgb(80, 96, 112), black);
+}
+
+#loginLoad {
+  float: right;
+}
+
+#loggingIn {
+  font-weight: bold;
+  margin: 0;
+}
+
+#signUpForm {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+}
+
+#articleDeleted {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+}
+
+#postArticleForm {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+}
+
+.postArticleWording {
+  font-weight: bold;
+  text-align: center;
+}
+
+#noUserArticles {
+  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+  text-align: center;
+}
+
+#articleTitle {
+  display: block;
+  margin: auto;
+  margin-top: 1%;
+}
+
+.postArticleWording {
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+
+#postArticleButton {
+  display: block;
+  margin: auto;
+  margin-top: 1%;
+}
+
+#postArticleButton:hover {
+  background: rgb(2, 202, 102);
+  color: white;
 }
