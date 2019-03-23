@@ -66,8 +66,6 @@ export default class SignUp extends React.Component {
               <p className="signUpWording">Username*</p>
 
               <input id="newUserName" className="signUpInput" required />
-              <p className="signUpWording">Avatar URL</p>
-              <input id="newUserAvatar" className="signUpInput" />
               <p className="signUpWording">Real Name*</p>
 
               <input id="newName" className="signUpInput" required />

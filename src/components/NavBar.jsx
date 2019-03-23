@@ -15,7 +15,8 @@ function NavBar() {
       <Link className="link" to="/topics">
         Topics
       </Link>
-      <h2 id="NavTitle">Shread Knews</h2>
+      <h2 id="navTitleLarge">Shread Knews</h2>
+      <h2 id="navTitleSmall">SK</h2>
     </nav>
   );
 }

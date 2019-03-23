@@ -33,7 +33,7 @@ export default class SingleArticleViewer extends React.Component {
 
   handleAddComment = (event) => {
     event.preventDefault();
-    const comment = event.target[0].value;
+    const comment = event.target[0].value.trim();
     const author = this.props.user;
     const articleId = this.props.article.article_id;
     event.target.reset();

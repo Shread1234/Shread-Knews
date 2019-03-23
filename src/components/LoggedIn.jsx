@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from '@reach/router';
 
-export default function LoggedIn({ handleSignOut, loggedInUser }) {
+export default function LoggedIn({ loggedInUser, handleSignOut }) {
   return (
     <div id="loggedInDiv">
       <p id="loggedInAs">Logged In As</p>

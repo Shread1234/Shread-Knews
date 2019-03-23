@@ -30,7 +30,7 @@ export default class PostArticle extends React.Component {
 
   addArticle = (event) => {
     event.preventDefault();
-    const newTopicSlug = this.state.newTopicSlug;
+    const newTopicSlug = this.state.newTopicSlug.trim();
     const { newTopicDescription } = this.state;
     const { articleTitle: title } = this.state;
     const { articleBody: body } = this.state;

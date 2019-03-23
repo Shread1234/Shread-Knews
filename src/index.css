@@ -8,6 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: black;
   color: white;
+  overflow: hidden;
 }
 
 code {
@@ -74,6 +75,7 @@ h1 {
   top: 5%;
   right: 2%;
   margin-top: 15%;
+  font-size: 70%;
 }
 
 #signUpButton {
@@ -334,13 +336,31 @@ textarea {
   background-image: linear-gradient(rgb(80, 96, 112), black);
 }
 
-#NavTitle {
+#navTitleLarge {
   text-align: center;
   margin: auto;
   position: relative;
   top: -40px;
   height: 20px;
   width: 50%;
+}
+
+#navTitleSmall {
+  display: none;
+  text-align: center;
+  margin: auto;
+  width: 70%;
+  top: 4%;
+  position: absolute;
+}
+
+@media (max-width: 500px) {
+  #navTitleSmall {
+    display: inline-block;
+  }
+  #navTitleLarge {
+    display: none;
+  }
 }
 
 #singleComment {
@@ -411,8 +431,11 @@ textarea {
 #articleTitle {
   background: rgb(44, 54, 63);
   color: white;
-  width: 40%;
+  width: 50%;
   font-size: 110%;
+  display: block;
+  margin: auto;
+  margin-top: 1%;
 }
 
 #selectedTopic {
@@ -431,7 +454,7 @@ textarea {
   display: block;
   margin: auto;
   margin-top: 1%;
-  width: 80%;
+  width: 50%;
   font-size: 110%;
   text-align: center;
 }
@@ -447,7 +470,7 @@ textarea {
   display: block;
   margin: auto;
   margin-top: 1%;
-  width: 80%;
+  width: 50%;
   font-size: 110%;
   text-align: center;
 }
@@ -517,6 +540,7 @@ textarea {
 #loginBox {
   background-image: linear-gradient(black, rgb(80, 96, 112), black);
   color: white;
+  width: 100%;
 }
 
 #errorMessage {
@@ -602,12 +626,6 @@ textarea {
   text-align: center;
 }
 
-#articleTitle {
-  display: block;
-  margin: auto;
-  margin-top: 1%;
-}
-
 .postArticleWording {
   font-weight: bold;
   text-align: center;
@@ -628,4 +646,8 @@ textarea {
 #commentsHead {
   padding-left: 1%;
   background-image: linear-gradient(black, rgb(80, 96, 112));
+}
+
+#userAvatar {
+  bottom: 0;
 }
