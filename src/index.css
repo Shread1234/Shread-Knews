@@ -499,10 +499,14 @@ textarea {
   color: white;
   display: block;
   margin: auto;
+  width: 50%;
+  font-size: 110%;
+  text-align: center;
 }
 
 #signUpFormButton {
-  margin-left: 47.5%;
+  display: block;
+  margin: auto;
 }
 
 #signUpFormButton:hover {

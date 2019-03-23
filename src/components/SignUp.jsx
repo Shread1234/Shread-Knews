@@ -58,12 +58,13 @@ export default class SignUp extends React.Component {
               onChange={this.handleChange}
               onSubmit={this.handleSubmit}
             >
-              <p className="signUpWording">Username*</p>
               {userError && (
                 <p id="newUserNameError" className="signUpWording">
-                  Username already Exists!
+                  Username Already Exists!
                 </p>
               )}
+              <p className="signUpWording">Username*</p>
+
               <input id="newUserName" className="signUpInput" required />
               <p className="signUpWording">Avatar URL</p>
               <input id="newUserAvatar" className="signUpInput" />
