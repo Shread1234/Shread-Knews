@@ -255,7 +255,7 @@ textarea {
 }
 
 #singleArticleTitle {
-  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+  background-image: linear-gradient(rgb(80, 96, 112), black);
   margin: 0%;
 }
 
@@ -263,6 +263,10 @@ textarea {
   background-image: linear-gradient(black, rgb(80, 96, 112), black);
   margin-bottom: 1%;
   padding: 1%;
+}
+
+#singleArticleMain {
+  font-size: 125%;
 }
 
 #addComment {
@@ -340,7 +344,8 @@ textarea {
 }
 
 #singleComment {
-  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+  background-image: linear-gradient(rgb(80, 96, 112), black);
+  padding: 1%;
 }
 
 #commentRemoved {
@@ -348,7 +353,8 @@ textarea {
 }
 
 #noCommentsTitle {
-  background-image: linear-gradient(black, rgb(80, 96, 112), black);
+  background-image: linear-gradient(black, rgb(80, 96, 112));
+  padding-left: 1%;
 }
 
 #articlesLoading {
@@ -601,4 +607,9 @@ textarea {
 #postArticleButton:hover {
   background: rgb(2, 202, 102);
   color: white;
+}
+
+#commentsHead {
+  padding-left: 1%;
+  background-image: linear-gradient(black, rgb(80, 96, 112));
 }

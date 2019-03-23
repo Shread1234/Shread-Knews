@@ -6,7 +6,7 @@ export default function CommentsViewer(props) {
   return (
     <div>
       <ul id="commentsViewer">
-        <h3>Comments</h3>
+        <h3 id="commentsHead">Comments</h3>
         {comments !== null &&
           comments.map((comment) => (
             <SingleComment

@@ -74,7 +74,7 @@ export default class SingleArticleViewer extends React.Component {
                   {article.topic}
                 </Link>
               </p>
-              <p>{article.body}</p>
+              <p id="singleArticleMain">{article.body}</p>
               <p>
                 <br />
                 Comments: {article.comment_count} &nbsp; Votes:{' '}
