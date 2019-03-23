@@ -458,10 +458,12 @@ textarea {
 
 #formError {
   background-image: linear-gradient(black, rgb(80, 96, 112), black);
+  text-align: center;
 }
 
 #topicError {
   background-image: linear-gradient(black, rgb(80, 96, 112), black);
+  text-align: center;
 }
 
 #signUpTitle {

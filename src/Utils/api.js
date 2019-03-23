@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://shread-knews.herokuapp.com/api/';
+const baseURL = 'https://shread-knews.herokuapp.com/api/';
 
 const sort_by = {
   'Oldest-Newest': 'sort_by=created_at&order=asc',

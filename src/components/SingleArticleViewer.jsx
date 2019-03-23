@@ -36,7 +36,7 @@ export default class SingleArticleViewer extends React.Component {
     const comment = event.target[0].value;
     const author = this.props.user;
     const articleId = this.props.article.article_id;
-
+    event.target.reset();
     postComment(comment, author, articleId).then(({ data }) => {
       this.setState({ commentAdded: true, addedComment: data.comment });
       setTimeout(() => this.setState({ commentAdded: false }), 2000);
