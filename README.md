@@ -57,13 +57,11 @@ This will open your browser with the React app running on a local port. Use the 
 - [react-spinkit](https://github.com/KyleAMathews/react-spinkit)
 - Netlify
 
----
-
 ## Author
 
-Jamie Main
-
 ---
+
+Jamie Main
 
 ## License
 
