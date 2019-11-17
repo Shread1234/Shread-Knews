@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Router } from '@reach/router';
 import Articles from './components/Articles';
 import Home from './components/Home';
@@ -11,33 +11,29 @@ import WrongTurn from './components/WrongTurn';
 import UserPage from './components/UserPage';
 import SignUp from './components/SignUp';
 
-class App extends Component {
-  state = {
-    currentUser: null
-  };
+export default function App() {
+  const [currentUser, setCurrentUser] = useState(null); 
 
-  componentDidMount() {
+  useEffect(() => {
     const user = localStorage.getItem('loggedInUser');
-    user !== null && this.setState({ currentUser: user });
-  }
+    user !== null && setCurrentUser(user);
+  }, [])
 
-  setUser = () => {
-    this.setState({ currentUser: localStorage.getItem('loggedInUser') });
+  const setUser = () => {
+    setCurrentUser(localStorage.getItem('loggedInUser'));
   };
 
-  removeUser = () => {
-    this.setState({ currentUser: null });
+  const removeUser = () => {
+    setCurrentUser(null);
   };
 
-  render() {
-    const { currentUser } = this.state;
     return (
       <div className="App">
-        <NavBar reloadArticles={this.reloadArticles} />
+        <NavBar />
         <UserLogin
           id="userLogin"
-          setUser={this.setUser}
-          removeUser={this.removeUser}
+          setUser={setUser}
+          removeUser={removeUser}
           currentUser={currentUser}
         />
         <Router>
@@ -57,7 +53,4 @@ class App extends Component {
         </Router>
       </div>
     );
-  }
 }
-
-export default App;
